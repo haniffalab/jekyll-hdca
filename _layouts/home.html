@@ -1,0 +1,100 @@
+---
+layout: default
+---
+<!-- Floating hero -->
+<div id="floating"></div>
+
+<!-- Welcome Section -->
+<div class="welcome d-flex justify-content-center flex-column">
+  <div class="inner-wrapper mt-auto mb-auto">
+    <h1 class="slide-in">HUMAN CELL ATLAS</h1>
+    <p class="slide-in">DEVELOPMENTAL</p>
+    <div class="action-links slide-in">
+      <a href="#" data-scroll-to="#introduction" id="scroll-to-content" class="btn btn-outline-light btn-pill align-self-center">View Collections</a>
+    </div>
+  </div>
+</div>
+<!-- Page Content -->
+<div class="page-content">
+  <!-- Content -->
+  <div class="content clearfix">
+    <div id="introduction" class="container mb-5">
+      <div class="section-title col-lg-8 col-md-10 ml-auto mr-auto">
+        <p class="lead">A single cell atlas of the developing blood and immune system</p>
+      </div>
+    </div>
+    <!-- Collections -->
+    <div id="collections" class="container mb-5">
+      <div class="section-title col-lg-8 col-md-10 ml-auto mr-auto">
+        <h3 class="mb-4">Collections</h3>
+        <p>Shards uses Poppins as its primary typeface for headings and the system’s UI font with a Roboto-first fallback
+          (only on non-Apple devices) for the remaining content.</p>
+      </div>
+      <div class="example col-md-10 ml-auto mr-auto">
+        <div class="table">
+          <div class="row header">
+            <div class="cell">
+              Collection
+            </div>
+            <div class="cell">
+              Tissue
+            </div>
+            <div class="cell">
+              Assay
+            </div>
+            <div class="cell">
+              Disease
+            </div>
+            <div class="cell">
+              Organism
+            </div>
+          </div>
+          {% for post in site.posts %}
+          <div class="row">
+            <div class="cell" data-title="Collection">
+              <a class="row" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </div>
+            <div class="cell" data-title="Tissue">
+              Fetal Liver
+            </div>
+            <div class="cell" data-title="Assay">
+              10x 3' v2  
+            </div>
+            <div class="cell" data-title="Disease">
+              None
+            </div>
+            <div class="cell" data-title="Organism">
+              Homo sapiens
+            </div>
+          </div>                                     
+          {% endfor %}  
+          </div>
+      </div>
+    </div>
+  </div>
+  <!-- Documentation -->
+  <div id="documentation" class="bg-white">
+    <div class="section-title container ml-auto mr-auto py-5">
+      <div class="col-lg-8 col-md-10 ml-auto mr-auto py-5">
+        <div class="row mb-5">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="hca-logo-container col-md-3">
+                <img src="{{ "/assets/images/hca-logo.png" | relative_url }}" alt="Human Cell Atlas" width="100%">
+              </div>
+              <div class="form-group col-md-9">
+                <h3 class="hca-logo-header">Human Cell Atlas</h3>
+                <h3 class="hca-logo-subheader">Developmental</h3>
+                <p class="hca-logo-text">The Human Developmental Cell Atlas (HDCA) aims to generate a comprehensive profile of these cell types and states present during development. This detailed study of development will be critical for understanding congenital and childhood disorders, as well as ageing.</p>
+                <a class="hca-logo-button d-table" href="https://www.humancellatlas.org/dca/">
+                  <button class="btn btn-pill btn-outline-primary">
+                    Read More</button>
+                </a>                  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
