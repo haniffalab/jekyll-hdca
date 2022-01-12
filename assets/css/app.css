@@ -1,4 +1,13 @@
 @charset "UTF-8";
+
+body {
+  font-family: Poppins,Arial,sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #5A6169;
+  background-color: #fff;
+}
+
 /**
  * Shards — Demo Page Adjustments
  */
@@ -659,4 +668,12 @@
       padding: 8px 18px;
       display: block
   }
+}
+
+dl {
+
+  font-size: 90%;
+}
+.open-with {
+  margin-top:10px; 
 }
