@@ -6,9 +6,9 @@ layout: default
 <div class="page-content">
   <!-- Content -->
   <div class="content clearfix">
-    <div id="introduction" class="container mb-5">
-      <div class="section-title col-lg-8 col-md-10 ml-auto mr-auto">
-        <p class="lead"><a href="{{ site.baseurl }}{% link index.markdown %}#introduction">Collections</a> &#187; {{page.title}}</p>
+    <div id="breadcrumbs" class="container mb-5">
+      <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+        <p><a href="{{ site.baseurl }}{% link index.markdown %}#introduction" class="parent">Collections</a> &#187; {{page.title}}</p>
       </div>
     </div>
     <!-- Collections -->
@@ -22,35 +22,40 @@ layout: default
         <div class="row mb-5">
           <div class="col-md-12">
             <div class="row">
-              <div class="form-group col-md-6">
+              <div class="col-md-6">
                 <dl class="row">
-                  <dt class="col-sm-3">Release date</dt>
-                  <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+                  <dt class="col-sm-4">Contact</dt>
+                  <dd class="col-sm-8"><a href="mailto:{{ page.contact_email }}">{{ page.contact }}</a></dd>
                 
-                  <dt class="col-sm-3">Contact</dt>
-                  <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
-                
-                
-                  <dt class="col-sm-3">DOI</dt>
-                  <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
+                  <dt class="col-sm-4">DOI</dt>
+                  <dd class="col-sm-8"><a href="{{ page.doi_link }}">{{ page.doi }}</a></dd>
+
+                  <dt class="col-sm-4">Release</dt>
+                  <dd class="col-sm-8">{{ page.date | date: "%-d %B %Y"}}</dd>
+                  
+                  <dt class="col-sm-4">Lab</dt>
+                  <dd class="col-sm-8"><a href="{{ page.lab_website }}">{{ page.lab }}</a></dd>
                 </dl>
               </div>
-              <div class="form-group col-md-6">
+              <div class="col-md-6">
                 <dl class="row">
-                  <dt class="col-sm-3">Malesuada porta</dt>
-                  <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
+                  <dt class="col-sm-4">Tissue</dt>
+                  <dd class="col-sm-8">{{ page.tissue }}</dd>
                 
-                  <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
-                  <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+                  <dt class="col-sm-4 text-truncate">Assay</dt>
+                  <dd class="col-sm-8">{{ page.assay }}</dd>
                 
-                  <dt class="col-sm-3">Description lists</dt>
-                  <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+                  <dt class="col-sm-4">Disease</dt>
+                  <dd class="col-sm-8">{{ page.disease }}</dd>
+                  
+                  <dt class="col-sm-4">Organism</dt>
+                  <dd class="col-sm-8">{{ page.organism }}</dd>
                 </dl>
               </div>
             </div>
           </div>
         </div>
-     </div>
+      </div>
       <div class="section-title col-lg-8 col-md-10 ml-auto mr-auto">
         <h3 class="mb-4">Datasets</h3>
       </div>
@@ -76,10 +81,11 @@ layout: default
               Cell Count
             </div>
           </div>
-          {% for post in site.posts %}
+          {% assign datasets_csv = page.datasets %}
+          {% for dataset in site.data[datasets_csv] %}
           <div class="row">
             <div class="cell" data-title="Dataset">
-              {{ post.title }}
+              {{ dataset.name }}
               <div class="open-with">
                 <a href="" class="btn btn-dark btn-squared btn-sm "><i class="fas fa-book-open"></i>&nbsp;&nbsp;Insights</a>
                 <a href="" class="btn btn-dark btn-squared btn-sm "><i class="fas fa-book-open"></i>&nbsp;&nbsp;cellxgene</a>
@@ -87,24 +93,42 @@ layout: default
               </div>
             </div>
             <div class="cell" data-title="Tissue">
-              Fetal Liver
+              {{ dataset.tissue }}
             </div>
             <div class="cell" data-title="Assay">
-              10x 3' v2  
+              {{ dataset.assay }}
             </div>
             <div class="cell" data-title="Disease">
-              None
+              {{ dataset.disease }}
             </div>
             <div class="cell" data-title="Organism">
-              Homo sapiens
+              {{ dataset.organism }}
             </div>
-            <div class="cell" data-title="Organism">
-              481120	
+            <div class="cell" data-title="Cell Count">
+              {{ dataset.count }}
             </div> 
-          </div>                                     
-          {% endfor %}  
-          </div>
+          </div>               
+          {% endfor %} 
+        </div>
       </div>
+      <div class="section-title col-lg-8 col-md-10 ml-auto mr-auto">
+        <h3 class="mb-4">Reproducibility</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a egestas est, nec tempus dui. In ligula ligula, 
+          tempus id nisl et, posuere lobortis orci. Morbi eget tortor et odio.</p>
+      </div>
+      <div class="example col-lg-8 col-md-10 ml-auto mr-auto">
+        <div class="row mb-5">
+          <div class="col-md-12">
+            <dl class="row">
+              <dt class="col-sm-4">Raw Data</dt>
+              <dd class="col-sm-8 text-truncate"><a href="{{ page.raw_data }}">{{ page.raw_data }}</a></dd>
+
+              <dt class="col-sm-4">Analysis Scripts</dt>
+              <dd class="col-sm-8 text-truncate"><a href="{{ page.analysis_scripts }}">{{ page.analysis_scripts }}</a></dd>
+            </dl>
+          </div>
+        </div>
+      </div>      
     </div>
   </div>
   <!-- Documentation -->

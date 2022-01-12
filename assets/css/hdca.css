@@ -1,0 +1,212 @@
+
+
+
+body {
+  font-family: Poppins,Arial,sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #5A6169;
+  background-color: #fff;
+}
+
+
+
+
+
+.welcome .logo {
+  width: 700px;
+  margin-top: 45vh;
+  margin-bottom: 20px;
+  color: #1f2429;
+  line-height: 1;
+}
+.welcome h1 {
+  font-weight: 500;
+  font-size: 45px;
+  text-transform: uppercase;
+  color: #226fb3;
+  letter-spacing: 0;
+
+}
+.welcome .inner-wrapper > p {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #1f2429;
+  font-size: 5.25rem;
+  line-height: 0.9em;
+
+}
+
+@media (max-width: 775.98px) {
+  .welcome h1 {
+    margin-top: 65vh;
+    font-size: 2.50rem;
+  }
+  .welcome .inner-wrapper > p {
+    font-size: 3.25rem;
+  }  
+}
+
+
+/* Custom */
+#floating {
+  will-change: transform;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 80px;
+  z-index: 1;
+  width: 400px;
+  height: 400px;
+  /*animation: float 7s ease-in-out infinite;*/
+  z-index: 2;
+}
+
+.hca-logo-container {
+  border-right: 2px solid #212529;
+}
+.hca-logo-header {
+  margin: 15px 10px;
+  font-weight: 500;
+  font-size: 45px;
+  text-transform: uppercase;
+}
+.hca-logo-subheader {
+  margin: 15px 10px;
+  font-weight: 900;
+  font-size: 60px;
+  text-transform: uppercase;
+}
+.hca-logo-text {
+  margin: 15px 10px;
+}
+.hca-logo-button {
+  margin: 15px 10px;
+}
+
+
+
+.navbar.bg-dark {
+  background-color: #15171a!important;
+}
+
+.btn-outline-primary {
+  border-color: #226fb3;
+  color: #226fb3;
+}
+.btn-outline-primary:hover {
+    background-color: #226fb3;
+    border-color: #226fb3;
+}
+.btn-primary {
+  border-color: #226fb3;
+  background-color: #226fb3;
+}
+
+
+/* table */
+.table {
+  text-align: left;
+  margin: 0 0 40px 0;
+  width: 100%;
+  display: table
+}
+@media screen and (max-width: 768px) {
+  .table {
+      display: block
+  }
+}
+.table .row {
+  display: table-row;
+}
+.table.row:nth-of-type(even) {
+  background-color: #f7f8fb;
+}
+.table .row.header {
+  font-weight: 900;
+  color: #ffffff;
+  /*background: #ea6153;*/
+  font-size: 11px;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #9ba4ae;
+  border: none;
+}
+.table .row.header .cell {
+  padding: 15px 25px;
+  border-top: none;
+}
+.table .row.blue {
+  background: #226fb3
+}
+@media screen and (max-width: 768px) {
+  .table .row {
+      display: block;
+      margin: 0;
+  }
+  .table .row:nth-of-type(even) {
+    background-color: #f7f8fb;
+    background: #e9e9e9;
+  }
+  .table .row.header {
+      padding: 0;
+      height: 6px;
+      background: #226fb3;
+  }
+  .table .row.header .cell {
+      display: none
+  }
+  .table .row .cell:before {
+      margin-bottom: 3px;
+      content: attr(data-title);
+      min-width: 98px;
+      font-size: 10px;
+      line-height: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #969696;
+      display: block
+  }
+}
+.table .cell {
+  padding: 30px 25px;
+  display: table-cell;
+  font-size: 0.9em;
+  border-top: 1px solid #dee2e6;
+  vertical-align: top;
+}
+.table .cell[data-title="Organisation"] {
+  font-weight: 700
+}
+.table .cell .meta {  
+  font-weight: normal;
+  font-size: 0.9em
+}
+@media screen and (max-width: 768px) {
+  .table .cell {
+      padding: 8px 18px;
+      display: block
+  }
+}
+
+dt {
+  margin-bottom:16px;
+}
+
+dl {
+
+  font-size: 90%;
+}
+.open-with .btn {
+  margin-top:5px; 
+  padding: 0.2rem 0.45rem;
+}
+
+#breadcrumbs {
+  color: #868e96;
+}
+#breadcrumbs .parent {
+  font-weight:700;
+  color:#226fb3;
+}

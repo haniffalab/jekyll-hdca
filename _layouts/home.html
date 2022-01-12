@@ -57,16 +57,16 @@ layout: default
               <a class="row" href="{{ post.url | relative_url }}">{{ post.title }}</a>
             </div>
             <div class="cell" data-title="Tissue">
-              Fetal Liver
+              {{ post.tissue }}
             </div>
             <div class="cell" data-title="Assay">
-              10x 3' v2  
+              {{ post.assay }}
             </div>
             <div class="cell" data-title="Disease">
-              None
+              {{ post.disease }}
             </div>
             <div class="cell" data-title="Organism">
-              Homo sapiens
+              {{ post.organism }}
             </div>
           </div>                                     
           {% endfor %}  

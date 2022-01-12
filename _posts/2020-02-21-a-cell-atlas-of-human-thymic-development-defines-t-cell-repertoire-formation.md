@@ -1,8 +1,22 @@
 ---
 layout: post
 title:  "A cell atlas of human thymic development defines T cell repertoire formation"
-date:   2021-12-08 14:42:19 +0000
+date:   2020-02-21 00:00:00 +0000
 categories: 
+datasets: thymus
+tissue: Thymus
+assay: 10x 3' v2
+disease: None
+organism: Homo sapiens
+contact: Muzlifah Haniffa
+contact_email: m.a.haniffa@newcastle.ac.uk
+doi: 10.1126/science.aay3224 
+doi_link: https://doi.org/10.1126/science.aay3224
+lab: Haniffa Lab
+lab_website: https://haniffalab.com/
+raw_data: E-MTAB-8581
+raw_data_link: https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-8581/
+analysis_scripts: https://zenodo.org/record/3572422 
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
