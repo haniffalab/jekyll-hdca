@@ -1,5 +1,6 @@
 ---
 layout: post
+permalink: thymus
 title:  "A cell atlas of human thymic development defines T cell repertoire formation"
 date:   2020-02-21 00:00:00 +0000
 categories: 

@@ -1,5 +1,6 @@
 ---
 layout: post
+permalink: fetal-liver
 title:  "Decoding human fetal liver haematopoiesis"
 date:   2019-10-09 00:00:00 +0000
 categories: 

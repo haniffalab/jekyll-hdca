@@ -8,7 +8,7 @@ body {
   background-color: #fff;
 }
 
-/* welcome section */
+/* t-sne visualization */
 #t-sne {
   will-change: transform;
   position: absolute;
@@ -21,6 +21,19 @@ body {
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  #t-sne {
+    top: 40px;
+  }  
+}
+
+@media (max-width: 576px) {
+  #t-sne {
+    top: 20px;
+  } 
+}
+
+/* welcome section */
 .welcome {
   background: #fff;
   height: 100vh;
@@ -53,9 +66,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  #t-sne {
-    top: 40px;
-  }  
   .welcome h1 {
     margin-top: 55vh;
     font-size: 2.50rem;
@@ -66,9 +76,6 @@ body {
 }
 
 @media (max-width: 576px) {
-  #t-sne {
-    top: 20px;
-  } 
   .welcome h1 {
     margin-top: 55vh;
     font-size: 2.00rem;
@@ -178,7 +185,8 @@ body {
 .page-content {
   position: relative;
   background: #fafafa;
-  padding-top: 5.3125rem;
+  padding: 5.3125rem 0;
+  min-height: 500px;
 }
 
 .page-content:before {
@@ -362,6 +370,9 @@ dl {
 }
 .main-footer a:hover {
   text-decoration: none;
+}
+.nowrap {
+  white-space: nowrap;
 }
 
 /* hdca branding */

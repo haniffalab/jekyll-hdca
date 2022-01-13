@@ -51,45 +51,53 @@ layout: default
             </div>
           </div>
           {% for post in site.posts %}
+          {% assign datasets_csv = post.datasets %}
           <div class="row">
             <div class="cell" data-title="Collection">
               <a class="row" href="{{ post.url | relative_url }}">{{ post.title }}</a>
             </div>
-            <div class="cell" data-title="Tissue">
-              {{ post.tissue }}
+            <div class="cell nowrap" data-title="Tissue">
+              {% assign tissues = "" | split: ',' %}
+              {% for dataset in site.data[datasets_csv] %}
+                {% assign tissues = tissues | push: dataset.tissue %}
+              {% endfor %} 
+              {% assign all_tissues = tissues | compact | uniq %}
+              {% for tissue in all_tissues %}
+                {{ tissue }}<br />
+              {% endfor %}  
             </div>
-            <div class="cell" data-title="Assay">
-              {{ post.assay }}
+            <div class="cell nowrap" data-title="Assay">
+              {% assign assays = "" | split: ',' %}
+              {% for dataset in site.data[datasets_csv] %}
+                {% assign assays = assays | push: dataset.assay %}
+              {% endfor %} 
+              {% assign all_assays = assays | compact | uniq %}
+              {% for assay in all_assays %}
+                {{ assay }}<br />
+              {% endfor %}
             </div>
-            <div class="cell" data-title="Disease">
-              {{ post.disease }}
+            <div class="cell nowrap" data-title="Disease">
+              {% assign diseases = "" | split: ',' %}
+              {% for dataset in site.data[datasets_csv] %}
+                {% assign diseases = assays | push: dataset.disease %}
+              {% endfor %} 
+              {% assign all_diseases = diseases | compact | uniq %}
+              {% for disease in all_diseases %}
+                {{ disease }}<br />
+              {% endfor %}
             </div>
             <div class="cell" data-title="Organism">
-              {{ post.organism }}
+              {% assign organisms = "" | split: ',' %}
+              {% for dataset in site.data[datasets_csv] %}
+                {% assign organisms = assays | push: dataset.organism %}
+              {% endfor %} 
+              {% assign all_organisms = organisms | compact | uniq %}
+              {% for organism in all_organisms %}
+                {{ organism }}<br />
+              {% endfor %}
             </div>
           </div>                                     
           {% endfor %}  
-          </div>
-      </div>
-    </div>
-  </div>
-  <!-- HDCA -->
-  <div id="hdca" class="bg-white">
-    <div class="container ml-auto mr-auto py-5">
-      <div class="col-lg-8 col-md-10 ml-auto mr-auto py-5">
-        <div class="row mb-5">
-          <div class="col-md-3 logo-container">
-            <img src="{{ "/assets/images/hca-logo.png" | relative_url }}" alt="Human Cell Atlas">
-          </div>
-          <div class="col-md-9 text-container">
-            <h3 class="header">Human Cell Atlas</h3>
-            <h3 class="subheader">Developmental</h3>
-            <p>The Human Developmental Cell Atlas (HDCA) aims to generate a comprehensive profile of these cell types and states present during development. This detailed study of development will be critical for understanding congenital and childhood disorders, as well as ageing.</p>
-            <a href="https://www.humancellatlas.org/dca/">
-              <button class="btn btn-pill btn-outline-primary">
-                Read More</button>
-            </a>                  
-          </div>
         </div>
       </div>
     </div>
