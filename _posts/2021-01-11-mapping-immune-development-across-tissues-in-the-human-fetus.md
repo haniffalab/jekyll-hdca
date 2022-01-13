@@ -1,8 +1,8 @@
 ---
 layout: post
 permalink: fetal-immune
-title:  "Mapping immune development across tissues in the human fetus"
-date:   2021-01-21 00:00:00 +0000
+title: "Mapping immune development across tissues in the human fetus"
+date: 2021-01-21 00:00:00 +0000
 categories: 
 contact: Emma Dann
 contact_email: ed6@sanger.ac.uk

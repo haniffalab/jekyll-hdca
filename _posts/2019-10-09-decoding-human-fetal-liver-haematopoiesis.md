@@ -1,8 +1,8 @@
 ---
 layout: post
 permalink: fetal-liver
-title:  "Decoding human fetal liver haematopoiesis"
-date:   2019-10-09 00:00:00 +0000
+title: "Decoding human fetal liver haematopoiesis"
+date: 2019-10-09 00:00:00 +0000
 categories: 
 contact: Muzlifah Haniffa
 contact_email: m.a.haniffa@newcastle.ac.uk
