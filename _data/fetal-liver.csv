@@ -1,0 +1,4 @@
+name,tissue,assay,disease,organism,count,insight_link,cellxgene_link,vitessce_link,download_link
+Human fetal liver 10x data,Fetal Liver,10x 3' v2,None,Homo sapiens,481120,https://developmentcellatlas.ncl.ac.uk/datasets/hca_liver/,,,https://storage.googleapis.com/haniffalab/fetal_liver/fetal_liver_alladata.h5ad
+Human fetal yolk-sac 10x data,Yolk Sac,10x 3' v2,None,Homo sapiens,481120,https://developmentcellatlas.ncl.ac.uk/datasets/hca_liver/,,,https://storage.googleapis.com/haniffalab/fetal_liver/yolksac_data.h5ad
+Human fetal liver Smart-seq2 data,Fetal Liver,Smart-seq2,None,Homo sapiens,481120,https://developmentcellatlas.ncl.ac.uk/datasets/hca_liver/,,,https://storage.googleapis.com/haniffalab/fetal_liver/fetal_liver_SS2.RDS

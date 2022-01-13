@@ -13,9 +13,8 @@ layout: default
     <!-- Collections -->
     <div id="publication" class="container mb-5">
       <div class="section-title col-lg-8 col-md-10 ml-auto mr-auto">
-        <h3 class="mb-4">{{page.title}}</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a egestas est, nec tempus dui. In ligula ligula, 
-          tempus id nisl et, posuere lobortis orci. Morbi eget tortor et odio.</p>
+        <h3 class="mb-4">{{ page.title }}</h3>
+        {{ content }}
       </div>
       <div class="example col-lg-8 col-md-10 ml-auto mr-auto">
         <div class="row mb-5">
@@ -123,10 +122,13 @@ layout: default
                 {% endif %}            
                 {% if dataset.vitescce_link %}
                   <a href="{{ dataset.vitescce_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-book-open"></i>&nbsp;&nbsp;Vitescce</a>
+                {% endif %}          
+                {% if dataset.download_link %}
+                  <a href="{{ dataset.download_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;Download</a>
                 {% endif %}
               </div>
             </div>
-            <div class="cell" data-title="Tissue">
+            <div class="cell nowrap" data-title="Tissue">
               {{ dataset.tissue }}
             </div>
             <div class="cell nowrap" data-title="Assay">
