@@ -38,17 +38,46 @@ layout: default
               </div>
               <div class="col-md-6">
                 <dl class="row">
+                  {% assign datasets_csv = page.permalink %}
                   <dt class="col-sm-4">Tissue</dt>
-                  <dd class="col-sm-8">{{ page.tissue }}</dd>
+                  <dd class="col-sm-8">
+                    {% assign tissues = "" | split: ',' %}
+                    {% for dataset in site.data[datasets_csv] %}
+                      {% assign tissues = tissues | push: dataset.tissue %}
+                    {% endfor %} 
+                    {% assign all_tissues = tissues | compact | uniq %}
+                    {{ all_tissues | join: ", " }}
+                  </dd>
                 
                   <dt class="col-sm-4 text-truncate">Assay</dt>
-                  <dd class="col-sm-8">{{ page.assay }}</dd>
+                  <dd class="col-sm-8">
+                    {% assign assays = "" | split: ',' %}
+                    {% for dataset in site.data[datasets_csv] %}
+                      {% assign assays = assays | push: dataset.assay %}
+                    {% endfor %} 
+                    {% assign all_assays = assays | compact | uniq %}
+                    {{ all_assays | join: ", " }}
+                  </dd>
                 
                   <dt class="col-sm-4">Disease</dt>
-                  <dd class="col-sm-8">{{ page.disease }}</dd>
+                  <dd class="col-sm-8">
+                    {% assign diseases = "" | split: ',' %}
+                    {% for dataset in site.data[datasets_csv] %}
+                      {% assign diseases = diseases | push: dataset.disease %}
+                    {% endfor %} 
+                    {% assign all_diseases = diseases | compact | uniq %}
+                    {{ all_diseases | join: ", " }}
+                  </dd>
                   
                   <dt class="col-sm-4">Organism</dt>
-                  <dd class="col-sm-8">{{ page.organism }}</dd>
+                  <dd class="col-sm-8">
+                    {% assign organisms = "" | split: ',' %}
+                    {% for dataset in site.data[datasets_csv] %}
+                      {% assign organisms = organisms | push: dataset.organism %}
+                    {% endfor %} 
+                    {% assign all_organisms = organisms | compact | uniq %}
+                    {{ all_organisms | join: ", " }}
+                  </dd>
                 </dl>
               </div>
             </div>
@@ -80,15 +109,21 @@ layout: default
               Cell Count
             </div>
           </div>
-          {% assign datasets_csv = page.datasets %}
+          {% assign datasets_csv = page.permalink %}
           {% for dataset in site.data[datasets_csv] %}
           <div class="row">
             <div class="cell" data-title="Dataset">
               {{ dataset.name }}
               <div class="open-with">
-                <a href="" class="btn btn-dark btn-squared btn-sm "><i class="fas fa-book-open"></i>&nbsp;&nbsp;Insights</a>
-                <a href="" class="btn btn-dark btn-squared btn-sm "><i class="fas fa-book-open"></i>&nbsp;&nbsp;cellxgene</a>
-                <a href="" class="btn btn-dark btn-squared btn-sm "><i class="fas fa-book-open"></i>&nbsp;&nbsp;Vitescce</a>
+                {% if dataset.insight_link %}
+                  <a href="{{ dataset.insight_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-book-open"></i>&nbsp;&nbsp;Insights</a>
+                {% endif %}                
+                {% if dataset.cellxgene_link %}
+                  <a href="{{ dataset.cellxgene_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-book-open"></i>&nbsp;&nbsp;cellxgene</a>
+                {% endif %}            
+                {% if dataset.vitescce_link %}
+                  <a href="{{ dataset.vitescce_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-book-open"></i>&nbsp;&nbsp;Vitescce</a>
+                {% endif %}
               </div>
             </div>
             <div class="cell" data-title="Tissue">
@@ -119,11 +154,20 @@ layout: default
         <div class="row mb-5">
           <div class="col-md-12">
             <dl class="row">
-              <dt class="col-sm-4">Raw Data</dt>
-              <dd class="col-sm-8 text-truncate"><a href="{{ page.raw_data }}">{{ page.raw_data }}</a></dd>
+              {% if page.raw_data_link %}
+                <dt class="col-sm-4">Raw Data</dt>
+                <dd class="col-sm-8 text-truncate"><a href="{{ page.raw_data_link }}" target="_blank">{{ page.raw_data_link }}</a></dd>
+              {% endif %}
 
-              <dt class="col-sm-4">Analysis Scripts</dt>
-              <dd class="col-sm-8 text-truncate"><a href="{{ page.analysis_scripts }}">{{ page.analysis_scripts }}</a></dd>
+              {% if page.code_repository_link %}
+                <dt class="col-sm-4">Code Repository</dt>
+                <dd class="col-sm-8 text-truncate"><a href="{{ page.code_repository_link }}" target="_blank">{{ page.code_repository_link }}</a></dd>
+              {% endif %}
+
+              {% if page.reproducibility_link %}
+                <dt class="col-sm-4">Reproducibility</dt>
+                <dd class="col-sm-8 text-truncate"><a href="{{ page.reproducibility_link }}" target="_blank">{{ page.reproducibility_link }}</a></dd>
+              {% endif %}
             </dl>
           </div>
         </div>

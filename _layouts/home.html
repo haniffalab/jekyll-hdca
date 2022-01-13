@@ -51,7 +51,7 @@ layout: default
             </div>
           </div>
           {% for post in site.posts %}
-          {% assign datasets_csv = post.datasets %}
+          {% assign datasets_csv = post.permalink %}
           <div class="row">
             <div class="cell" data-title="Collection">
               <a class="row" href="{{ post.url | relative_url }}">{{ post.title }}</a>
@@ -79,7 +79,7 @@ layout: default
             <div class="cell nowrap" data-title="Disease">
               {% assign diseases = "" | split: ',' %}
               {% for dataset in site.data[datasets_csv] %}
-                {% assign diseases = assays | push: dataset.disease %}
+                {% assign diseases = diseases | push: dataset.disease %}
               {% endfor %} 
               {% assign all_diseases = diseases | compact | uniq %}
               {% for disease in all_diseases %}
@@ -89,7 +89,7 @@ layout: default
             <div class="cell" data-title="Organism">
               {% assign organisms = "" | split: ',' %}
               {% for dataset in site.data[datasets_csv] %}
-                {% assign organisms = assays | push: dataset.organism %}
+                {% assign organisms = organisms | push: dataset.organism %}
               {% endfor %} 
               {% assign all_organisms = organisms | compact | uniq %}
               {% for organism in all_organisms %}
