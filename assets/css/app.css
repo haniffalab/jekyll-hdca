@@ -202,6 +202,10 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fafafa', GradientType=0);
 }
 
+.page-content .lead {
+  margin-bottom: 0;
+}
+
 .page-content .content .table {
   background: #fff;
   box-shadow: 0 0 25px rgba(40, 47, 60, 0.05), 0 20px 25px rgba(40, 47, 60, 0.05), 0 3px 4px rgba(40, 47, 60, 0.05);
