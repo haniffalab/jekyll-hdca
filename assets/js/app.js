@@ -4,22 +4,16 @@
 
     // Hide the loader and show the elements.
     setTimeout(function () {
-      $('.loader').addClass('hidden').delay(200).remove();
       $('.slide-in').each(function() {
         $(this).addClass('visible');
       });
     }, 1900);
-
+    
     // Enable popovers everywhere.
     $('[data-toggle="popover"]').popover();
 
     // Enable tooltips everywhere.
     $('[data-toggle="tooltip"]').tooltip();
-
-    // Disable example anchors scroll to top action.
-    $('.example a').click(function(event) {
-        event.target.getAttribute('href') === '#' && event.preventDefault();
-    });
 
     // Hook the "Learn More" button event to scroll to content.
     $('#scroll-to-content').click(function(ev) {
@@ -27,13 +21,10 @@
       if (typeof ev.target.dataset.scrollTo === 'undefined') {
         return;
       }
-
       $('html, body').animate({
         scrollTop: $(ev.target.dataset.scrollTo).offset().top - 100
       }, 1000)
     });
-
-
 
     // D3 icon element
     const width = 400,
@@ -52,7 +43,7 @@
           .map((d, i) => [+d.Longitude, +d.Latitude, d['Urban Agglomeration'], +d[2015], +d['Country Code']])
           .slice(0, 800);
 
-      const canvas = d3.select("#floating").append("canvas")
+      const canvas = d3.select("#t-sne").append("canvas")
           .attr("width", width)
           .attr("height", height);
 

@@ -1,14 +1,13 @@
 ---
 layout: default
 ---
-<!-- Floating hero -->
-<div id="floating"></div>
-
+<!-- t-SNE -->
+<div id="t-sne"></div>
 <!-- Welcome Section -->
 <div class="welcome d-flex justify-content-center flex-column">
   <div class="inner-wrapper mt-auto mb-auto">
     <h1 class="slide-in">HUMAN CELL ATLAS</h1>
-    <p class="slide-in">DEVELOPMENTAL</p>
+    <h2 class="slide-in">DEVELOPMENTAL</h2>
     <div class="action-links slide-in">
       <a href="#" data-scroll-to="#introduction" id="scroll-to-content" class="btn btn-outline-light btn-pill align-self-center">View Collections</a>
     </div>
@@ -74,26 +73,22 @@ layout: default
       </div>
     </div>
   </div>
-  <!-- Documentation -->
-  <div id="documentation" class="bg-white">
-    <div class="section-title container ml-auto mr-auto py-5">
+  <!-- HDCA -->
+  <div id="hdca" class="bg-white">
+    <div class="container ml-auto mr-auto py-5">
       <div class="col-lg-8 col-md-10 ml-auto mr-auto py-5">
         <div class="row mb-5">
-          <div class="col-md-12">
-            <div class="row">
-              <div class="hca-logo-container col-md-3">
-                <img src="{{ "/assets/images/hca-logo.png" | relative_url }}" alt="Human Cell Atlas" width="100%">
-              </div>
-              <div class="form-group col-md-9">
-                <h3 class="hca-logo-header">Human Cell Atlas</h3>
-                <h3 class="hca-logo-subheader">Developmental</h3>
-                <p class="hca-logo-text">The Human Developmental Cell Atlas (HDCA) aims to generate a comprehensive profile of these cell types and states present during development. This detailed study of development will be critical for understanding congenital and childhood disorders, as well as ageing.</p>
-                <a class="hca-logo-button d-table" href="https://www.humancellatlas.org/dca/">
-                  <button class="btn btn-pill btn-outline-primary">
-                    Read More</button>
-                </a>                  
-              </div>
-            </div>
+          <div class="col-md-3 logo-container">
+            <img src="{{ "/assets/images/hca-logo.png" | relative_url }}" alt="Human Cell Atlas">
+          </div>
+          <div class="col-md-9 text-container">
+            <h3 class="header">Human Cell Atlas</h3>
+            <h3 class="subheader">Developmental</h3>
+            <p>The Human Developmental Cell Atlas (HDCA) aims to generate a comprehensive profile of these cell types and states present during development. This detailed study of development will be critical for understanding congenital and childhood disorders, as well as ageing.</p>
+            <a href="https://www.humancellatlas.org/dca/">
+              <button class="btn btn-pill btn-outline-primary">
+                Read More</button>
+            </a>                  
           </div>
         </div>
       </div>

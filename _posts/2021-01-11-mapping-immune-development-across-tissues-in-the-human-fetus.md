@@ -1,5 +1,6 @@
 ---
 layout: post
+permalink: fetal-immune
 title:  "Mapping immune development across tissues in the human fetus"
 date:   2021-01-21 00:00:00 +0000
 categories: 
