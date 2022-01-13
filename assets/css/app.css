@@ -325,9 +325,12 @@ body {
   border-top: 1px solid #dee2e6;
   vertical-align: top;
 }
-.table .cell .meta {  
-  font-weight: normal;
-  font-size: 0.9em
+.table .cell .actions .btn {
+  margin-top:5px; 
+  padding: 0.2rem 0.45rem;
+}
+.table .cell .tags {
+  margin: 5px 0;
 }
 @media screen and (max-width: 768px) {
   .table .cell {
@@ -368,17 +371,6 @@ dl {
 .btn-primary {
   border-color: #226fb3;
   background-color: #226fb3;
-}
-
-/* shard overrides */
-.footer-cta {
-  padding: 100px 0;
-}
-.main-footer a:hover {
-  text-decoration: none;
-}
-.nowrap {
-  white-space: nowrap;
 }
 
 /* hdca branding */
@@ -452,10 +444,16 @@ dl {
 }
 
 
-
-
-.open-with .btn {
-  margin-top:5px; 
-  padding: 0.2rem 0.45rem;
+/* shard overrides */
+.footer-cta {
+  padding: 100px 0;
 }
+.main-footer a:hover {
+  text-decoration: none;
+}
+.nowrap {
+  white-space: nowrap;
+}
+
+
 

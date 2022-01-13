@@ -10,13 +10,13 @@ layout: default
         <p><a href="{{ site.baseurl }}{% link index.markdown %}#collections" class="parent">Collections</a> &#187; {{page.title}}</p>
       </div>
     </div>
-    <!-- Collections -->
-    <div id="publication" class="container mb-5">
+    <!-- Collection -->
+    <div id="collection" class="container mb-5">
       <div class="section-title col-lg-8 col-md-10 ml-auto mr-auto">
         <h3 class="mb-4">{{ page.title }}</h3>
         {{ content }}
       </div>
-      <div class="example col-lg-8 col-md-10 ml-auto mr-auto">
+      <div class="col-lg-8 col-md-10 ml-auto mr-auto">
         <div class="row mb-5">
           <div class="col-md-12">
             <div class="row">
@@ -86,7 +86,7 @@ layout: default
       <div class="section-title col-lg-8 col-md-10 ml-auto mr-auto">
         <h3 class="mb-4">Datasets</h3>
       </div>
-      <div class="example col-md-10 ml-auto mr-auto">
+      <div class="col-md-10 ml-auto mr-auto">
         <div class="table">
           <div class="row header">
             <div class="cell">
@@ -113,7 +113,15 @@ layout: default
           <div class="row">
             <div class="cell" data-title="Dataset">
               {{ dataset.name }}
-              <div class="open-with">
+              {% assign tags = dataset.tags | split: ',' %}
+              {% if tags %}
+                <div class="tags">
+                {% for tag in tags %}
+                  <span class="badge badge-info">{{ tag }}</span>
+                {% endfor %}
+                </div>
+              {% endif %}  
+              <div class="actions">
                 {% if dataset.insight_link %}
                   <a href="{{ dataset.insight_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-book-open"></i>&nbsp;&nbsp;Insights</a>
                 {% endif %}                
@@ -152,7 +160,7 @@ layout: default
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a egestas est, nec tempus dui. In ligula ligula, 
           tempus id nisl et, posuere lobortis orci. Morbi eget tortor et odio.</p>
       </div>
-      <div class="example col-lg-8 col-md-10 ml-auto mr-auto">
+      <div class="col-lg-8 col-md-10 ml-auto mr-auto">
         <div class="row mb-5">
           <div class="col-md-12">
             <dl class="row">
