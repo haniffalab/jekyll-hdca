@@ -51,6 +51,7 @@ body {
   color: #1f2429;
   line-height: 1;
   text-transform: uppercase;
+  text-shadow: 0px 0px 20px white,0px 0px 20px white,0px 0px 20px white,0px 0px 10px white,0px 0px 10px white;
 }
 
 .welcome h2 {
@@ -63,6 +64,7 @@ body {
   line-height: 0.9em; 
   text-transform: uppercase;
   transition-delay: 150ms;
+  text-shadow: 0px 0px 20px white,0px 0px 20px white,0px 0px 20px white,0px 0px 10px white,0px 0px 10px white;
 }
 
 @media (max-width: 768px) {
@@ -414,7 +416,7 @@ dl {
   #hdca .text-container p {
     display: none;
   }  
-  #hdca .text-container a button {
+  #hdca .text-container a {
     margin-top: 1.65rem;
   }  
 }
