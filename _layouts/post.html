@@ -23,7 +23,7 @@ layout: default
               <div class="col-md-6">
                 <dl class="row">
                   <dt class="col-sm-4">Contact</dt>
-                  <dd class="col-sm-8"><a href="mailto:{{ page.contact_email }}">{{ page.contact }}</a></dd>
+                  <dd class="col-sm-8"><a href="mailto:{{ page.contact_email | encode_email }}">{{ page.contact }}</a></dd>
                 
                   <dt class="col-sm-4">DOI</dt>
                   <dd class="col-sm-8"><a href="{{ page.doi_link }}">{{ page.doi }}</a></dd>
