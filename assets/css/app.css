@@ -345,32 +345,6 @@ body {
   color:#226fb3;
 }
 
-/* bootstrap overrides */
-.navbar.bg-dark {
-  background-color: #15171a!important;
-}
-.btn-outline-primary {
-  border-color: #226fb3;
-  color: #226fb3;
-}
-.btn-outline-primary:hover {
-  background-color: #226fb3;
-  border-color: #226fb3;
-}
-.btn-primary {
-  border-color: #226fb3;
-  background-color: #226fb3;
-}
-.btn-outline-primary:not(:disabled):not(.disabled).active,
-.btn-outline-primary:not(:disabled):not(.disabled):active {
-  color: #fff;
-  background-color: #226fb3;
-  border-color: #226fb3;
-}
-.btn-outline-primary.focus, .btn-outline-primary:focus {
-  box-shadow: 0 0 0 3px rgba(34,111,179,.15),0 3px 15px rgba(34,111,179,.2),0 2px 5px rgba(0,0,0,.1)!important;
-}
-
 /* tooltips and popovers */
 .tooltip {
   position: absolute;
@@ -650,6 +624,31 @@ body {
   } 
 }
 
+/* bootstrap overrides */
+.navbar.bg-dark {
+  background-color: #15171a!important;
+}
+.btn-outline-primary {
+  border-color: #226fb3;
+  color: #226fb3;
+}
+.btn-outline-primary:hover {
+  background-color: #226fb3;
+  border-color: #226fb3;
+}
+.btn-primary {
+  border-color: #226fb3;
+  background-color: #226fb3;
+}
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.btn-outline-primary:not(:disabled):not(.disabled):active {
+  color: #fff;
+  background-color: #226fb3;
+  border-color: #226fb3;
+}
+.btn-outline-primary.focus, .btn-outline-primary:focus {
+  box-shadow: 0 0 0 3px rgba(34,111,179,.15),0 3px 15px rgba(34,111,179,.2),0 2px 5px rgba(0,0,0,.1)!important;
+}
 
 /* shard overrides */
 .footer-cta {
