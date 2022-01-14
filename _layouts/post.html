@@ -113,26 +113,16 @@ layout: default
           <div class="row">
             <div class="cell" data-title="Dataset">
               {{ dataset.name }}
-              {% assign tags = dataset.tags | split: ',' %}
-              {% if tags %}
-                <div class="tags">
-                {% for tag in tags %}
-                  <span class="badge badge-info">{{ tag }}</span>
-                {% endfor %}
-                </div>
-              {% endif %}  
               <div class="actions">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-dark btn-squared btn-sm" data-toggle="modal" data-target="#DatasetModal{{ forloop.index }}">
+                  <i class="fas fa-bars"></i>
+                </button>               
                 {% if dataset.insight_link %}
                   <a href="{{ dataset.insight_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-book-open"></i>&nbsp;&nbsp;Insights</a>
                 {% endif %}                
                 {% if dataset.cellxgene_link %}
                   <a href="{{ dataset.cellxgene_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-book-open"></i>&nbsp;&nbsp;cellxgene</a>
-                {% endif %}            
-                {% if dataset.vitescce_link %}
-                  <a href="{{ dataset.vitescce_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-book-open"></i>&nbsp;&nbsp;Vitescce</a>
-                {% endif %}          
-                {% if dataset.download_link %}
-                  <a href="{{ dataset.download_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;Download</a>
                 {% endif %}
               </div>
             </div>
@@ -185,3 +175,144 @@ layout: default
     </div>
   </div>
 </div>
+
+{% for dataset in site.data[datasets_csv] %}
+<div class="modal fade" id="DatasetModal{{ forloop.index }}" tabindex="-1" role="dialog" aria-labelledby="DatasetModal{{ forloop.index }}Title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">{{ dataset.name }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{ dataset.description }}
+        {% assign tags = dataset.tags | split: ',' %}
+        {% if tags %}
+          <div class="tags">
+          {% for tag in tags %}
+            <span class="badge badge-info">{{ tag }}</span>
+          {% endfor %}
+          </div>
+        {% endif %}  
+        <h5 class="text-muted mb-4">About the dataset</h5>
+        <dl class="row">
+          <dt class="col-sm-4">Tissue</dt>
+          <dd class="col-sm-8">
+            {{ dataset.tissue }}
+          </dd>
+        
+          <dt class="col-sm-4 text-truncate">Assay</dt>
+          <dd class="col-sm-8">
+            {{ dataset.assay }}
+          </dd>
+        
+          <dt class="col-sm-4">Disease</dt>
+          <dd class="col-sm-8">
+            {{ dataset.disease }}
+          </dd>
+          
+          <dt class="col-sm-4">Organism</dt>
+          <dd class="col-sm-8">
+            {{ dataset.organism }}
+          </dd>
+
+          <dt class="col-sm-4">Cell Count</dt>
+          <dd class="col-sm-8">
+            {{ dataset.count }}
+          </dd>                   
+        </dl>
+        <h5 class="text-muted mb-4">Apps for data exploration</h5>
+        <dl class="row">
+          {% if dataset.insight_link %}
+          <dt class="col-sm-4">Insights</dt>
+          <dd class="col-sm-8">
+            <a href="{{ dataset.insight_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-book-open"></i>&nbsp;&nbsp;Insights</a>
+          </dd>
+          {% endif %}  
+
+          {% if dataset.cellxgene_link %}
+          <dt class="col-sm-4">Cellxgene</dt>
+          <dd class="col-sm-8">
+            <a href="{{ dataset.cellxgene_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-book-open"></i>&nbsp;&nbsp;cellxgene</a>
+          </dd>          
+          {% endif %}      
+
+          {% if dataset.vitescce_link %}
+          <dt class="col-sm-4">Vitescce</dt>
+          <dd class="col-sm-8">
+            <a href="{{ dataset.vitescce_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-book-open"></i>&nbsp;&nbsp;Vitescce</a>
+          </dd>      
+          {% endif %}                  
+        </dl>  
+
+        <h5 class="text-muted mb-4">Downloads and resources</h5>
+        <table class="table table-sm table-hover">
+          <tbody>
+            {% if dataset.h5ad_object_link %}
+            <tr>
+              <td>H5AD file <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="" 
+                data-original-title="AnnData is a commonly used Python package for keeping track of data and learned annotations, and can 
+                be used to read from and write to the h5ad file format"></i></td>
+              <td>0</td>
+              <td>
+                <a href="{{ dataset.h5ad_object_link }}" class="btn btn-dark btn-squared btn-sm float-right" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;Download</a>
+              </td>
+            </tr>   
+            {% endif %}            
+            {% if dataset.scvi_model_link %}
+            <tr>
+              <td>scVI model <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="" 
+                data-original-title="AnnData is a commonly used Python package for keeping track of data and learned annotations, and can 
+                be used to read from and write to the h5ad file format"></i></td>
+              <td>0</td>
+              <td>
+                <a href="{{ dataset.scvi_model_link }}" class="btn btn-dark btn-squared btn-sm float-right" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;Download</a>
+              </td>
+            </tr>   
+            {% endif %}
+            {% if dataset.celltypist_model_link %}
+            <tr>
+              <td>Celltypist model <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="" 
+                data-original-title="AnnData is a commonly used Python package for keeping track of data and learned annotations, and can 
+                be used to read from and write to the h5ad file format"></i></td>
+              <td>0</td>
+              <td>
+                <a href="{{ dataset.celltypist_model_link }}" class="btn btn-dark btn-squared btn-sm float-right" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;Download</a>
+              </td>
+            </tr>     
+            {% endif %}   
+            {% if dataset.csv_cell_annotations_link %}
+            <tr>
+              <td>CSV cell annotations <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="" 
+                data-original-title="AnnData is a commonly used Python package for keeping track of data and learned annotations, and can 
+                be used to read from and write to the h5ad file format"></i></td>
+              <td>0</td>
+              <td>
+                <a href="{{ dataset.csv_cell_annotations_link }}" class="btn btn-dark btn-squared btn-sm float-right" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;Download</a>
+              </td>
+            </tr>    
+            {% endif %}                      
+          </tbody>
+        </table>      
+        <dl class="row">
+
+
+
+
+
+
+
+                   
+        </dl>                
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>             
+{% endfor %} 
+
+
