@@ -255,7 +255,6 @@ layout: default
               <td>H5AD file <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="" 
                 data-original-title="AnnData is a commonly used Python package for keeping track of data and learned annotations, and can 
                 be used to read from and write to the h5ad file format"></i></td>
-              <td>0</td>
               <td>
                 <a href="{{ dataset.h5ad_object_link }}" class="btn btn-dark btn-squared btn-sm float-right" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;Download</a>
               </td>
@@ -264,9 +263,8 @@ layout: default
             {% if dataset.scvi_model_link %}
             <tr>
               <td>scVI model <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="" 
-                data-original-title="AnnData is a commonly used Python package for keeping track of data and learned annotations, and can 
-                be used to read from and write to the h5ad file format"></i></td>
-              <td>0</td>
+                data-original-title="scvi-tools (single-cell variational inference tools) is a package for probabilistic modeling and analysis
+                of single-cell omics data, built on top of PyTorch and AnnData"></i></td>
               <td>
                 <a href="{{ dataset.scvi_model_link }}" class="btn btn-dark btn-squared btn-sm float-right" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;Download</a>
               </td>
@@ -275,9 +273,8 @@ layout: default
             {% if dataset.celltypist_model_link %}
             <tr>
               <td>Celltypist model <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="" 
-                data-original-title="AnnData is a commonly used Python package for keeping track of data and learned annotations, and can 
-                be used to read from and write to the h5ad file format"></i></td>
-              <td>0</td>
+                data-original-title="Celltypist is an open source tool for automated cell type annotations as well as a work group in charge of
+                curating models and ontologies"></i></td>
               <td>
                 <a href="{{ dataset.celltypist_model_link }}" class="btn btn-dark btn-squared btn-sm float-right" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;Download</a>
               </td>
@@ -286,26 +283,14 @@ layout: default
             {% if dataset.csv_cell_annotations_link %}
             <tr>
               <td>CSV cell annotations <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="" 
-                data-original-title="AnnData is a commonly used Python package for keeping track of data and learned annotations, and can 
-                be used to read from and write to the h5ad file format"></i></td>
-              <td>0</td>
+                data-original-title="CSV cell annotations"></i></td>
               <td>
                 <a href="{{ dataset.csv_cell_annotations_link }}" class="btn btn-dark btn-squared btn-sm float-right" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;Download</a>
               </td>
             </tr>    
             {% endif %}                      
           </tbody>
-        </table>      
-        <dl class="row">
-
-
-
-
-
-
-
-                   
-        </dl>                
+        </table>                  
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
