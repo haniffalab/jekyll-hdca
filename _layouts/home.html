@@ -59,9 +59,12 @@ layout: default
             <div class="cell nowrap" data-title="Tissue">
               {% assign tissues = "" | split: ',' %}
               {% for dataset in site.data[datasets_csv] %}
-                {% assign tissues = tissues | push: dataset.tissue %}
+                {% assign list = dataset.tissue | split: "," %}
+                {% for tissue in list %}
+                  {% assign tissues = tissues | push: tissue %}
+                {% endfor %} 
               {% endfor %} 
-              {% assign all_tissues = tissues | compact | uniq %}
+              {% assign all_tissues = tissues | compact | uniq | sort %}
               {% for tissue in all_tissues %}
                 {{ tissue }}<br />
               {% endfor %}  
@@ -69,9 +72,12 @@ layout: default
             <div class="cell nowrap" data-title="Assay">
               {% assign assays = "" | split: ',' %}
               {% for dataset in site.data[datasets_csv] %}
-                {% assign assays = assays | push: dataset.assay %}
+                {% assign list = dataset.assay | split: "," %}
+                {% for assay in list %}
+                  {% assign assays = assays | push: assay %}
+                {% endfor %} 
               {% endfor %} 
-              {% assign all_assays = assays | compact | uniq %}
+              {% assign all_assays = assays | compact | uniq | sort %}
               {% for assay in all_assays %}
                 {{ assay }}<br />
               {% endfor %}
@@ -79,9 +85,12 @@ layout: default
             <div class="cell nowrap" data-title="Disease">
               {% assign diseases = "" | split: ',' %}
               {% for dataset in site.data[datasets_csv] %}
-                {% assign diseases = diseases | push: dataset.disease %}
+                {% assign list = dataset.disease | split: "," %}
+                {% for disease in list %}
+                  {% assign diseases = diseases | push: disease %}
+                {% endfor %}
               {% endfor %} 
-              {% assign all_diseases = diseases | compact | uniq %}
+              {% assign all_diseases = diseases | compact | uniq | sort %}
               {% for disease in all_diseases %}
                 {{ disease }}<br />
               {% endfor %}
@@ -89,9 +98,12 @@ layout: default
             <div class="cell" data-title="Organism">
               {% assign organisms = "" | split: ',' %}
               {% for dataset in site.data[datasets_csv] %}
-                {% assign organisms = organisms | push: dataset.organism %}
+                {% assign list = dataset.organism | split: "," %}
+                {% for organism in list %}
+                  {% assign organisms = organisms | push: organism %}
+                {% endfor %}
               {% endfor %} 
-              {% assign all_organisms = organisms | compact | uniq %}
+              {% assign all_organisms = organisms | compact | uniq | sort %}
               {% for organism in all_organisms %}
                 {{ organism }}<br />
               {% endfor %}

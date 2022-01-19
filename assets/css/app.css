@@ -661,7 +661,7 @@ body {
   white-space: nowrap;
 }
 .modal .tags {
-  margin: 20px 0;
+  margin: 0 0 20px 0;
 }
 .modal dl .btn,
 .modal table .btn {
@@ -676,4 +676,8 @@ dt {
 }
 dl {
   font-size: 90%;
+}
+
+.page-content .content .modal .table td {
+  padding: 0.3rem;
 }
