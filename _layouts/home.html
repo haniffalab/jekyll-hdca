@@ -44,9 +44,6 @@ layout: default
               Assay
             </div>
             <div class="cell">
-              Disease
-            </div>
-            <div class="cell">
               Organism
             </div>
           </div>
@@ -80,19 +77,6 @@ layout: default
               {% assign all_assays = assays | compact | uniq | sort %}
               {% for assay in all_assays %}
                 {{ assay }}<br />
-              {% endfor %}
-            </div>
-            <div class="cell nowrap" data-title="Disease">
-              {% assign diseases = "" | split: ',' %}
-              {% for dataset in site.data[datasets_csv] %}
-                {% assign list = dataset.disease | split: "," %}
-                {% for disease in list %}
-                  {% assign diseases = diseases | push: disease %}
-                {% endfor %}
-              {% endfor %} 
-              {% assign all_diseases = diseases | compact | uniq | sort %}
-              {% for disease in all_diseases %}
-                {{ disease }}<br />
               {% endfor %}
             </div>
             <div class="cell" data-title="Organism">
