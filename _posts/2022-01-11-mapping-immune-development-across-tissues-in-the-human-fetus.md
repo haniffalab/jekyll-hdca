@@ -5,7 +5,7 @@ title: "Mapping immune development across tissues in the human fetus"
 date: 2022-01-11 00:00:00 +0000
 categories: 
 contact: Emma Dann
-contact_email: ed6@sanger.ac.uk
+contact_email: ed6 [at] sanger [dot] ac [dot] uk
 doi: 
 doi_link: 
 lab: Teichmann Lab
