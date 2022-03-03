@@ -5,7 +5,7 @@ title: "Developmental cell programs are co-opted in inflammatory skin disease"
 date: 2021-01-22 00:00:00 +0000
 categories: 
 contact: Muzlifah Haniffa
-contact_email: m.a.haniffa@newcastle.ac.uk
+contact_email: mh32@sanger.ac.uk
 doi: 10.1126/science.aba6500 
 doi_link: https://doi.org/10.1126/science.aba6500
 lab: Haniffa Lab

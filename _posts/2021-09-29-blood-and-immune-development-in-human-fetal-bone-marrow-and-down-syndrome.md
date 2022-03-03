@@ -5,7 +5,7 @@ title: "Blood and immune development in human fetal bone marrow and Down syndrom
 date: 2021-09-29 00:00:00 +0000
 categories: 
 contact: Muzlifah Haniffa
-contact_email: m.a.haniffa@newcastle.ac.uk
+contact_email: mh32@sanger.ac.uk
 doi: 10.1038/s41586-021-03929-x 
 doi_link: https://doi.org/10.1038/s41586-021-03929-x
 lab: Haniffa Lab
