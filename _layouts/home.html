@@ -70,7 +70,8 @@ layout: default
               {% assign assays = "" | split: ',' %}
               {% for dataset in site.data[datasets_csv] %}
                 {% assign list = dataset.assay | split: "," %}
-                {% for assay in list %}
+                {% for item in list %}
+                  {% assign assay = item | strip %}
                   {% assign assays = assays | push: assay %}
                 {% endfor %} 
               {% endfor %} 
