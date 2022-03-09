@@ -1,2 +1,8 @@
 name,tissue,assay,disease,organism,count,insight_link,cellxgene_link,vitessce_link,download_link
-Human fetal liver 10x data,Fetal Bone Marrow,10x 3' v2,None,Homo sapiens,481120,https://developmentcellatlas.ncl.ac.uk/datasets/hca_liver/,,,https://storage.googleapis.com/haniffalab/fetal_liver/fetal_liver_alladata.h5ad
+Human fetal bone marrow 10x data,Fetal Bone Marrow,"10x 3',10x 5',10x VDJ-TCR,10x VDJ-BCR",None,Homo sapiens,481120,,,,
+Human fetal bone marrow down syndrome 10x data,Fetal Bone Marrow,10x 5',None,Homo sapiens,,,,,
+"Human fetal liver, bone marrow and cord blood (CD34+ CITE-seq data) [mRNA] ","Fetal Bone Marrow, Fetal Liver, Cord Blood",10x 3',None,Homo sapiens,,,,,
+"Human fetal liver, bone marrow and cord blood (CD34+ CITE-seq data) [PROTEIN] ","Fetal Bone Marrow, Fetal Liver, Cord Blood",10x ADT,None,Homo sapiens,,,,,
+Human fetal bone marrow CITE-seq data [mRNA] ,Fetal Bone Marrow,10x 3',None,Homo sapiens,,,,,
+Human fetal bone marrow CITE-seq data [PROTEIN] ,Fetal Bone Marrow,10x ADT,None,Homo sapiens,,,,,
+FBM Smart-seq2 scRNA-seq,Fetal Bone Marrow,Smart-seq2,None,Homo sapiens,,,,,
