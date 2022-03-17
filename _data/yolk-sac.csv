@@ -1,7 +1,7 @@
-name,tissue,assay,disease,organism,count,insight_link,cellxgene_link,vitessce_link,download_link
-A1 V2 human gastrula ys integrated normalised 211121,Yolk sac,,,Homo sapiens,,,,,
-A1 V5 Human mouse atlas YS SAMAP normalised integration,Yolk sac,,,Homo sapiens,,,,,
-A1 V5 mouse gastrulation Haem SAMAP trajectory,,,,,,,,,
-A2 V1 cite seq protein ran combined,,,,Homo sapiens,,,,,
-A4 V7 Combined YS Fliver normalised 20210914,Yolk sac,,,Homo sapiens,,,,,
-A4 V7 YS YS integrated data singlets normalised counts for MS plotting 20211111 with obsp,Yolk sac,,,Homo sapiens,,,,,
+name,desc,category,tags,tissue,assay,disease,organism,count,insight_link,cellxgene_link,vitessce_link,h5ad_object_link,scvi_model_link,celltypist_model_link,csv_cell_annotations_link,hires_image_link
+A1 V2 human gastrula ys integrated normalised 211121,,,,,,,Homo sapiens,,https://yolk-sac.cellatlas.io/dataset/1/scatterplot,,,https://storage.googleapis.com/haniffalab/yolk_sac/A1_V2_human_gastrula_ys_integrated_normalised_211121.h5ad,,,,
+A1 V5 Human mouse atlas YS SAMAP normalised integration,,,,,,,Homo sapiens,,https://yolk-sac.cellatlas.io/dataset/2/scatterplot,,,https://storage.googleapis.com/haniffalab/yolk_sac/A1_V5_Human_mouse_atlas_YS_SAMAP_normalised_integration.h5ad,,,,
+A1 V5 mouse gastrulation Haem SAMAP trajectory,,,,,,,Homo sapiens,,https://yolk-sac.cellatlas.io/dataset/3/scatterplot,,,https://storage.googleapis.com/haniffalab/yolk_sac/A1_V5_Human_mouse_atlas_YS_SAMAP_normalised_integration.h5ad,,,,
+A2 V1 cite seq protein ran combined,,,,,,,Homo sapiens,,https://yolk-sac.cellatlas.io/dataset/4/scatterplot,,,https://storage.googleapis.com/haniffalab/yolk_sac/A2_V1_cite_seq_protein_ran_combined.h5ad,,,,
+A4 V7 Combined YS Fliver normalised 20210914,,,,,,,Homo sapiens,,https://yolk-sac.cellatlas.io/dataset/5/scatterplot,,,https://storage.googleapis.com/haniffalab/yolk_sac/A2_V1_cite_seq_protein_ran_combined.h5ad,,,,
+A4 V7 YS YS integrated data singlets normalised counts for MS plotting 20211111 with obsp,,,,,,,Homo sapiens,,https://yolk-sac.cellatlas.io/dataset/6/scatterplot,,,https://storage.googleapis.com/haniffalab/yolk_sac/A4_V7_YS_YS_integrated_data_singlets_normalised_counts_for_MS_plotting_20211111_with_obsp.h5ad,,,,
