@@ -196,7 +196,7 @@ layout: default
                 </button>
               </div>
               <div class="modal-body">
-                {{ dataset.description }}
+                {{ dataset.desc | replace: "\n", "<br>" }}
                 {% assign tags = dataset.tags | split: ',' %}
                 {% if tags %}
                   <div class="tags">
