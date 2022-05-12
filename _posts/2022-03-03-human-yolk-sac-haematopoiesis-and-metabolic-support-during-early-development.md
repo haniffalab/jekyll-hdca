@@ -1,6 +1,8 @@
 ---
 layout: post
 permalink: yolk-sac
+published: true
+listed: true
 title: "Human yolk sac haematopoiesis and metabolic support during early development"
 date: 2022-03-03 00:00:00 +0000
 categories: 

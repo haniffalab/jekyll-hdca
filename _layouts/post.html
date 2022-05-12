@@ -7,7 +7,7 @@ layout: default
   <div class="content clearfix">
     <div id="breadcrumbs" class="container mb-5">
       <div class="col-lg-8 col-md-10 ml-auto mr-auto">
-        <p><a href="{{ site.baseurl }}{% link index.markdown %}#collections" class="parent">Collections</a> &#187; {{page.title}}</p>
+        <p><a href="{{ site.baseurl }}{% link index.markdown %}#collections" class="parent">Data Collections</a> &#187; {{page.title}}</p>
       </div>
     </div>
     <!-- Collection -->
@@ -27,17 +27,14 @@ layout: default
                   <dt class="col-sm-4">Contact</dt>
                   <dd class="col-sm-8"><a href="mailto:{{ page.contact_email | encode_email }}">{{ page.contact }}</a></dd>
                   {% endif %}
-
                   {% if page.doi %}
                   <dt class="col-sm-4">DOI</dt>
                   <dd class="col-sm-8"><a href="{{ page.doi_link }}">{{ page.doi }}</a></dd>
                   {% endif %}
-
                   {% if page.date %}
                   <dt class="col-sm-4">Release</dt>
                   <dd class="col-sm-8">{{ page.date | date: "%-d %B %Y"}}</dd>
                   {% endif %}
-
                   {% if page.lab %}
                   <dt class="col-sm-4">Lab</dt>
                   <dd class="col-sm-8"><a href="{{ page.lab_website }}">{{ page.lab }}</a></dd>
@@ -51,48 +48,49 @@ layout: default
                     {% assign tissues = "" | split: ',' %}
                     {% for dataset in site.data[dataset_csv] %}
                       {% assign list = dataset.tissue | split: "," %}
-                      {% for tissue in list %}
+                      {% for item in list %}
+                        {% assign tissue = item | strip %}
                         {% assign tissues = tissues | push: tissue %}
                       {% endfor %} 
                     {% endfor %} 
                     {% assign all_tissues = tissues | compact | uniq | sort %}
                     {{ all_tissues | join: ", " }}
                   </dd>
-                
                   <dt class="col-sm-4 text-truncate">Assay</dt>
                   <dd class="col-sm-8">
                     {% assign assays = "" | split: ',' %}
                     {% for dataset in site.data[dataset_csv] %}
                       {% assign list = dataset.assay | split: "," %}
-                      {% for assay in list %}
+                      {% for item in list %}
+                        {% assign assay = item | strip %}
                         {% assign assays = assays | push: assay %}
                       {% endfor %} 
                     {% endfor %} 
                     {% assign all_assays = assays | compact | uniq | sort %}
                     {{ all_assays | join: ", " }}
                   </dd>
-                
                   <dt class="col-sm-4">Disease</dt>
                   <dd class="col-sm-8">
                     {% assign diseases = "" | split: ',' %}
                     {% for dataset in site.data[dataset_csv] %}
                       {% assign list = dataset.disease | split: "," %}
-                      {% for disease in list %}
+                      {% for item in list %}
+                        {% assign disease = item | strip %}
                         {% assign diseases = diseases | push: disease %}
-                      {% endfor %}
+                      {% endfor %} 
                     {% endfor %} 
                     {% assign all_diseases = diseases | compact | uniq | sort %}
                     {{ all_diseases | join: ", " }}
                   </dd>
-                  
                   <dt class="col-sm-4">Organism</dt>
                   <dd class="col-sm-8">
                     {% assign organisms = "" | split: ',' %}
                     {% for dataset in site.data[dataset_csv] %}
                       {% assign list = dataset.organism | split: "," %}
-                      {% for organism in list %}
+                      {% for item in list %}
+                        {% assign organism = item | strip %}
                         {% assign organisms = organisms | push: organism %}
-                      {% endfor %}
+                      {% endfor %} 
                     {% endfor %} 
                     {% assign all_organisms = organisms | compact | uniq | sort %}
                     {{ all_organisms | join: ", " }}
@@ -103,91 +101,97 @@ layout: default
           </div>
         </div>
       </div>
+    </div>
+    <div id="datasets" class="mb-5">
       {% assign items_grouped = site.data[dataset_csv] | group_by: 'category' %}
       {% for group in items_grouped %}
-        <div class="section-title col-lg-8 col-md-10 ml-auto mr-auto">
-          <h3 class="mb-4">{{group.name}} Datasets</h3>
-        </div>
-        <div class="col-md-10 ml-auto mr-auto">
-          <div class="table">
-            <div class="row header">
-              <div class="cell">
-                Dataset
-              </div>
-              <div class="cell">
-                Tissue
-              </div>
-              <div class="cell">
-                Assay
-              </div>
-              <div class="cell">
-                Disease
-              </div>
-              <div class="cell">
-                Organism
-              </div>
-              <div class="cell">
-                Count
-              </div>
-            </div>
-            {% for dataset in group.items %}
-            <div class="row">
-              <div class="cell" data-title="Dataset">
-                {{ dataset.name }}
-                <div class="actions mt-2">
-                  <button type="button" class="btn btn-dark btn-squared btn-sm" data-toggle="modal" data-target="#DatasetModal{{group.name}}{{ forloop.index }}">
-                    <i class="fas fa-bars"></i>
-                  </button>               
-                  {% if dataset.insight_link %}
-                    <a href="{{ dataset.insight_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-book-open"></i>&nbsp;&nbsp;Insights</a>
-                  {% endif %}                
-                  {% if dataset.cellxgene_link %}
-                    <a href="{{ dataset.cellxgene_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-book-open"></i>&nbsp;&nbsp;cellxgene</a>
-                  {% endif %}
-                  {% if dataset.insight_link == nil and dataset.cellxgene_link == nil and dataset.h5ad_object_link %}
-                    <a href="{{ dataset.h5ad_object_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;.h5ad</a>
-                  {% endif %}
-                </div>
-              </div>
-              <div class="cell nowrap" data-title="Tissue">
-                {% assign tissues = "" | split: ',' %}
-                {% assign list = dataset.tissue | split: "," %}
-                {% for tissue in list %}
-                  {% assign tissues = tissues | push: tissue %}
-                {% endfor %} 
-                {% assign all_tissues = tissues | compact | uniq | sort %}
-                {% for tissue in all_tissues %}
-                  {{ tissue }}<br />
-                {% endfor %} 
-              </div>
-              <div class="cell nowrap" data-title="Assay">
-                {% assign assays = "" | split: ',' %}
-                {% assign list = dataset.assay | split: "," %}
-                {% for assay in list %}
-                  {% assign assays = assays | push: assay %}
-                {% endfor %} 
-                {% assign all_assays = assays | compact | uniq | sort %}
-                {% for assay in all_assays %}
-                  {{ assay }}<br />
-                {% endfor %}
-              </div>
-              <div class="cell" data-title="Disease">
-                {{ dataset.disease }}
-              </div>
-              <div class="cell" data-title="Organism">
-                {{ dataset.organism }}
-              </div>
-              <div class="cell" data-title="Count">
-                {{ dataset.count }}
-              </div> 
-            </div>               
-            {% endfor %} 
+        <div class="container">
+          <div class="section-title col-lg-8 col-md-10 ml-auto mr-auto">
+            <h3 class="mb-4">{{group.name}} Datasets</h3>
           </div>
         </div>
+        <div class="container-fluid">
+          <div class="col-md-10 ml-auto mr-auto">
+            <div class="table">
+              <div class="row header">
+                <div class="cell">
+                  Dataset
+                </div>
+                <div class="cell">
+                  Tissue
+                </div>
+                <div class="cell">
+                  Assay
+                </div>
+                <div class="cell">
+                  Disease
+                </div>
+                <div class="cell">
+                  Organism
+                </div>
+                <div class="cell">
+                  Count
+                </div>
+              </div>
+              {% for dataset in group.items %}
+              <div class="row">
+                <div class="cell" data-title="Dataset">
+                  <a href="#DatasetModal{{ group.name }}{{ forloop.index }}" data-toggle="modal" data-target="#DatasetModal{{ group.name }}{{ forloop.index }}">{{ dataset.name }}</a>
+                  <div class="actions mt-2">
+                    <button type="button" class="btn btn-dark btn-squared btn-sm" data-toggle="modal" data-target="#DatasetModal{{ group.name }}{{ forloop.index }}">
+                      <i class="fas fa-bars"></i>
+                    </button>               
+                    {% if dataset.insight_link %}
+                      <a href="{{ dataset.insight_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-book-open"></i>&nbsp;&nbsp;Insights</a>
+                    {% endif %}                
+                    {% if dataset.cellxgene_link %}
+                      <a href="{{ dataset.cellxgene_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-book-open"></i>&nbsp;&nbsp;cellxgene</a>
+                    {% endif %}
+                    {% if dataset.insight_link == nil and dataset.cellxgene_link == nil and dataset.h5ad_object_link %}
+                      <a href="{{ dataset.h5ad_object_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;.h5ad</a>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="cell nowrap" data-title="Tissue">
+                  {% assign tissues = "" | split: ',' %}
+                  {% assign list = dataset.tissue | split: "," %}
+                  {% for tissue in list %}
+                    {% assign tissues = tissues | push: tissue %}
+                  {% endfor %} 
+                  {% assign all_tissues = tissues | compact | uniq | sort %}
+                  {% for tissue in all_tissues %}
+                    {{ tissue }}<br />
+                  {% endfor %} 
+                </div>
+                <div class="cell nowrap" data-title="Assay">
+                  {% assign assays = "" | split: ',' %}
+                  {% assign list = dataset.assay | split: "," %}
+                  {% for assay in list %}
+                    {% assign assays = assays | push: assay %}
+                  {% endfor %} 
+                  {% assign all_assays = assays | compact | uniq | sort %}
+                  {% for assay in all_assays %}
+                    {{ assay }}<br />
+                  {% endfor %}
+                </div>
+                <div class="cell" data-title="Disease">
+                  {{ dataset.disease }}
+                </div>
+                <div class="cell" data-title="Organism">
+                  {{ dataset.organism }}
+                </div>
+                <div class="cell" data-title="Count">
+                  {{ dataset.count }}
+                </div> 
+              </div>               
+              {% endfor %} 
+            </div>
+          </div> 
+        </div>           
         <!-- Dataset modal content -->
         {% for dataset in group.items %}
         <div class="modal fade" id="DatasetModal{{group.name}}{{ forloop.index }}" tabindex="-1" role="dialog" aria-labelledby="DatasetModal{{group.name}}{{ forloop.index }}Title" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">{{ dataset.name }}</h5>
@@ -211,22 +215,18 @@ layout: default
                   <dd class="col-sm-8">
                     {{ dataset.tissue }}
                   </dd>
-                
                   <dt class="col-sm-4 text-truncate">Assay</dt>
                   <dd class="col-sm-8">
                     {{ dataset.assay }}
                   </dd>
-                
                   <dt class="col-sm-4">Disease</dt>
                   <dd class="col-sm-8">
                     {{ dataset.disease }}
                   </dd>
-                  
                   <dt class="col-sm-4">Organism</dt>
                   <dd class="col-sm-8">
                     {{ dataset.organism }}
                   </dd>
-        
                   <dt class="col-sm-4">Count</dt>
                   <dd class="col-sm-8">
                     {{ dataset.count }}
@@ -243,14 +243,12 @@ layout: default
                     <a href="{{ dataset.insight_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-book-open"></i>&nbsp;&nbsp;Insights</a>
                   </dd>
                   {% endif %}  
-        
                   {% if dataset.cellxgene_link %}
                   <dt class="col-sm-4">Cellxgene</dt>
                   <dd class="col-sm-8">
                     <a href="{{ dataset.cellxgene_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-book-open"></i>&nbsp;&nbsp;cellxgene</a>
                   </dd>          
                   {% endif %}      
-        
                   {% if dataset.vitescce_link %}
                   <dt class="col-sm-4">Vitescce</dt>
                   <dd class="col-sm-8">
@@ -259,7 +257,6 @@ layout: default
                   {% endif %}                  
                 </dl>  
                 {% endif %}  
-
                 <h5 class="text-muted mb-4">Downloads and resources</h5>
                 <table class="table table-sm table-hover">
                   <tbody>
@@ -319,9 +316,11 @@ layout: default
               </div>
             </div>
           </div>
-        </div>             
-        {% endfor %}   
+        </div>  
+        {% endfor %}  
       {% endfor %}
+    </div>
+    <div id="reproducibility" class="container mb-5">      
       <div class="section-title col-lg-8 col-md-10 ml-auto mr-auto">
         <h3 class="mb-4">Reproducibility</h3>
         <p>Reproducibility is a major principle underpinning the scientific method. We make publicly available the raw data 
@@ -335,12 +334,10 @@ layout: default
                 <dt class="col-sm-4">Raw Data</dt>
                 <dd class="col-sm-8 text-truncate"><a href="{{ page.raw_data_link }}" target="_blank">{{ page.raw_data_link }}</a></dd>
               {% endif %}
-
               {% if page.code_repository_link %}
                 <dt class="col-sm-4">Code Repository</dt>
                 <dd class="col-sm-8 text-truncate"><a href="{{ page.code_repository_link }}" target="_blank">{{ page.code_repository_link }}</a></dd>
               {% endif %}
-
               {% if page.reproducibility_link %}
                 <dt class="col-sm-4">Reproducibility</dt>
                 <dd class="col-sm-8 text-truncate"><a href="{{ page.reproducibility_link }}" target="_blank">{{ page.reproducibility_link }}</a></dd>

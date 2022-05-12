@@ -1,6 +1,8 @@
 ---
 layout: post
 permalink: fetal-immune
+published: true
+listed: true
 title: "Mapping the developing human immune system across organs"
 date: 2022-01-11 00:00:00 +0000
 categories: 

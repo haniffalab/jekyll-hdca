@@ -1,6 +1,8 @@
 ---
 layout: post
 permalink: adult-diseased-skin
+published: true
+listed: true
 title: "Developmental cell programs are co-opted in inflammatory skin disease"
 date: 2021-01-22 00:00:00 +0000
 categories: 
