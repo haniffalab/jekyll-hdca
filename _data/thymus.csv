@@ -1,2 +1,7 @@
-name,tissue,assay,disease,organism,count,insight_link,cellxgene_link,vitessce_link,download_link
-Human fetal thymus 10x data,Thymus ,10x 3' v2,None,Homo sapiens,481120,https://developmentcellatlas.ncl.ac.uk/datasets/hca_liver/,,,https://storage.googleapis.com/haniffalab/fetal_liver/fetal_liver_alladata.h5ad
+name,desc,category,tags,tissue,assay,disease,organism,count,insight_link,cellxgene_link,vitessce_link,h5ad_object_link,scvi_model_link,celltypist_model_link,csv_cell_annotations_link,hires_image_link,source_link
+Human fetal thymus 10x data,,scRNA-seq,scRNA-seq,Thymus ,"10x 3' v2, 10x 5' v2",None,Homo sapiens,,,,,https://storage.googleapis.com/haniffalab/thymus/thymus_annotated_matrix_files.zip,,,,,
+Human fetal thymus (t-cell receptor/b-cell receptor) data,,,,Thymus ,,,Homo sapiens,,,,,,,,,,
+Human fetal thymus Smart-seq2 data,,Smart-seq2,Smart-seq2,Thymus ,Smart-seq2,,Homo sapiens,,,,,,,,,,
+Human pediatric thymus 10x data,,scRNA-seq,scRNA-seq,Thymus ,"10x 3' v2, 10x 5' v2",,Homo sapiens,,,,,,,,,,
+Human adult thymus 10x data,,scRNA-seq,scRNA-seq,Thymus ,"10x 3' v2, 10x 5' v2",,Homo sapiens,,,,,,,,,,
+Mouse thymus 10x data,,scRNA-seq,scRNA-seq,Thymus ,"10x 3' v2, 10x 5' v2",,Mus musculus,,,,,https://storage.googleapis.com/haniffalab/thymus/thymus_annotated_matrix_files.zip,,,,,
