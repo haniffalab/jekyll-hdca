@@ -1,2 +1,6 @@
-name,tissue,assay,disease,organism,count,insight_link,cellxgene_link,vitessce_link,download_link
-Human adult healthy 10x data,Skin,10x 3' v2,None,Homo sapiens,481120,https://developmentcellatlas.ncl.ac.uk/datasets/hca_liver/,,,https://storage.googleapis.com/haniffalab/fetal_liver/fetal_liver_alladata.h5ad
+name,desc,category,tags,tissue,assay,disease,organism,count,insight_link,cellxgene_link,vitessce_link,h5ad_object_link,scvi_model_link,celltypist_model_link,csv_cell_annotations_link,hires_image_link,source_link
+Human adult healthy 10x data,,scRNA-seq,scRNA-seq,Skin,10x 3' v2,None,Homo sapiens,,,,,https://zenodo.org/record/4569496/files/healthy.h5ad?download=1,,,,,
+Human adult psoriasis 10x data,,scRNA-seq,scRNA-seq,Skin,10x 3' v2,Psoriasis,Homo sapiens,,,,,https://storage.googleapis.com/haniffalab/diseased_skin/submission.h5ad,,,,,
+Human adult atopic dermatitis 10x data,,scRNA-seq,scRNA-seq,Skin,10x 3' v2,Atopic dermatitis,Homo sapiens,,,,,https://storage.googleapis.com/haniffalab/diseased_skin/submission.h5ad,,,,,
+Human fetal 10x data,,scRNA-seq,scRNA-seq,Skin,10x 3' v2,,Homo sapiens,,,,,https://zenodo.org/record/4569496/files/fetal_submission.h5ad?download=1,,,,,
+Human adult Smart-seq2 data,,Smart-seq2,Smart-seq2,Skin,Smart-seq2,,Homo sapiens,,,,,,,,,,

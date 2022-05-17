@@ -1,8 +1,8 @@
-name,tissue,assay,disease,organism,count,insight_link,cellxgene_link,vitessce_link,download_link
-Human fetal bone marrow 10x data,Fetal Bone Marrow,"10x 3',10x 5',10x VDJ-TCR,10x VDJ-BCR",None,Homo sapiens,481120,,,,
-Human fetal bone marrow down syndrome 10x data,Fetal Bone Marrow,10x 5',None,Homo sapiens,,,,,
-"Human fetal liver, bone marrow and cord blood (CD34+ CITE-seq data) [mRNA] ","Fetal Bone Marrow, Fetal Liver, Cord Blood",10x 3',None,Homo sapiens,,,,,
-"Human fetal liver, bone marrow and cord blood (CD34+ CITE-seq data) [PROTEIN] ","Fetal Bone Marrow, Fetal Liver, Cord Blood",10x ADT,None,Homo sapiens,,,,,
-Human fetal bone marrow CITE-seq data [mRNA] ,Fetal Bone Marrow,10x 3',None,Homo sapiens,,,,,
-Human fetal bone marrow CITE-seq data [PROTEIN] ,Fetal Bone Marrow,10x ADT,None,Homo sapiens,,,,,
-FBM Smart-seq2 scRNA-seq,Fetal Bone Marrow,Smart-seq2,None,Homo sapiens,,,,,
+name,desc,category,tags,tissue,assay,disease,organism,count,insight_link,cellxgene_link,vitessce_link,h5ad_object_link,scvi_model_link,celltypist_model_link,csv_cell_annotations_link,hires_image_link,source_link
+Human fetal bone marrow 10x data,,scRNA-seq,scRNA-seq,Fetal Bone Marrow,"10x 3',10x 5',10x VDJ-TCR,10x VDJ-BCR",None,Homo sapiens,,,,,https://storage.googleapis.com/haniffalab/fetal_bone_marrow/fig1b_fbm_scaled_gex_updated_dr_20210104.h5ad,,,,,
+Human fetal bone marrow down syndrome 10x data,,scRNA-seq,scRNA-seq,Fetal Bone Marrow,10x 5',None,Homo sapiens,,,,,https://storage.googleapis.com/haniffalab/fetal_bone_marrow/fig5a_downs_fbm_scaled_gex_updated_dr_20210119.h5ad,,,,,
+"Human fetal liver, bone marrow and cord blood (CD34+ CITE-seq data) [mRNA] ",,CITE-seq,CITE-seq,"Fetal Bone Marrow, Fetal Liver, Cord Blood",CITE-seq,None,Homo sapiens,,,,,https://storage.googleapis.com/haniffalab/fetal_bone_marrow/050221_mq224_mRNA_Progenitors_only_postHarmony_ccfiltered_DEG_P4_sorted_annotations.h5ad,,,,,
+"Human fetal liver, bone marrow and cord blood (CD34+ CITE-seq data) [PROTEIN] ",,CITE-seq,CITE-seq,"Fetal Bone Marrow, Fetal Liver, Cord Blood",CITE-seq,None,Homo sapiens,,,,,https://storage.googleapis.com/haniffalab/fetal_bone_marrow/110221_mq224_postQC_postDSB_postFDG_postHarmony_ADTonmRNA.h5ad,,,,,
+Human fetal bone marrow CITE-seq data [mRNA] ,,CITE-seq,CITE-seq,Fetal Bone Marrow,CITE-seq,None,Homo sapiens,,,,,https://storage.googleapis.com/haniffalab/fetal_bone_marrow/fbm_mnc_citeseq_rna_final_pp_dr_meta_20210415.h5ad,,,,,
+Human fetal bone marrow CITE-seq data [PROTEIN] ,,CITE-seq,CITE-seq,Fetal Bone Marrow,CITE-seq,None,Homo sapiens,,,,,https://storage.googleapis.com/haniffalab/fetal_bone_marrow/080421_mq224_postQC_postDSB_postUMAP_celllabels_MNCs_ADTonmRNA_xSimone.h5ad,,,,,
+FBM Smart-seq2 scRNA-seq,,,,Fetal Bone Marrow,Smart-seq2,None,Homo sapiens,,,,,,,,,,
