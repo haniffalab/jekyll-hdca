@@ -1,7 +1,7 @@
 name,desc,category,tags,tissue,assay,disease,organism,count,insight_link,cellxgene_link,vitessce_link,h5ad_object_link,scvi_model_link,celltypist_model_link,csv_cell_annotations_link,hires_image_link,source_link
-Human fetal thymus 10x data,,scRNA-seq,scRNA-seq,Thymus ,"10x 3' v2, 10x 5' v2",None,Homo sapiens,,,,,https://storage.googleapis.com/haniffalab/thymus/thymus_annotated_matrix_files.zip,,,,,
-Human fetal thymus (t-cell receptor/b-cell receptor) data,,,,Thymus ,,,Homo sapiens,,,,,,,,,,
-Human fetal thymus Smart-seq2 data,,Smart-seq2,Smart-seq2,Thymus ,Smart-seq2,,Homo sapiens,,,,,,,,,,
-Human pediatric thymus 10x data,,scRNA-seq,scRNA-seq,Thymus ,"10x 3' v2, 10x 5' v2",,Homo sapiens,,,,,,,,,,
-Human adult thymus 10x data,,scRNA-seq,scRNA-seq,Thymus ,"10x 3' v2, 10x 5' v2",,Homo sapiens,,,,,,,,,,
-Mouse thymus 10x data,,scRNA-seq,scRNA-seq,Thymus ,"10x 3' v2, 10x 5' v2",,Mus musculus,,,,,https://storage.googleapis.com/haniffalab/thymus/thymus_annotated_matrix_files.zip,,,,,
+Human thymus data,,scRNA-seq,scRNA-seq,Thymus ,"10x 3' v2, 10x 5' v2",,Homo sapiens,,https://insights.cellatlas.io/thymus/dataset/2/scatterplot,,,https://insights.cellatlas.io/thymus/dataset/2/download,,,,,
+Human HSC data,,scRNA-seq,scRNA-seq,Thymus ,"10x 3' v2, 10x 5' v2",,Homo sapiens,,https://insights.cellatlas.io/thymus/dataset/3/scatterplot,,,https://insights.cellatlas.io/thymus/dataset/3/download,,,,,
+Human T cell trajectory data,,scRNA-seq,scRNA-seq,Thymus ,"10x 3' v2, 10x 5' v2",,Homo sapiens,,https://insights.cellatlas.io/thymus/dataset/4/scatterplot,,,https://insights.cellatlas.io/thymus/dataset/4/download,,,,,
+Human thymic epithelial cell analysis,,scRNA-seq,scRNA-seq,Thymus ,"10x 3' v2, 10x 5' v2",,Homo sapiens,,https://insights.cellatlas.io/thymus/dataset/1/scatterplot,,,https://insights.cellatlas.io/thymus/dataset/1/download,,,,,
+Mouse stromal data,,scRNA-seq,scRNA-seq,Thymus ,"10x 3' v2, 10x 5' v2",,Mus musculus,,https://insights.cellatlas.io/thymus/dataset/5/scatterplot,,,https://insights.cellatlas.io/thymus/dataset/5/download,,,,,
+Mouse prenatal + postnatal data,,scRNA-seq,scRNA-seq,Thymus ,"10x 3' v2, 10x 5' v2",,Mus musculus,,https://insights.cellatlas.io/thymus/dataset/6/scatterplot,,,https://insights.cellatlas.io/thymus/dataset/6/download,,,,,
