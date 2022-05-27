@@ -150,6 +150,9 @@ layout: default
                     {% if dataset.insight_link == nil and dataset.cellxgene_link == nil and dataset.h5ad_object_link %}
                       <a href="{{ dataset.h5ad_object_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;.h5ad</a>
                     {% endif %}
+                    {% if dataset.insight_link == nil and dataset.cellxgene_link == nil and dataset.h5ad_object_link == nil and dataset.source_link %}
+                      <a href="{{ dataset.source_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;Source</a>
+                    {% endif %}
                   </div>
                 </div>
                 <div class="cell nowrap" data-title="Tissue">
