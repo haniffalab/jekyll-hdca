@@ -8,8 +8,8 @@ date: 2022-01-11 00:00:00 +0000
 categories: 
 contact: Emma Dann
 contact_email: ed6 [at] sanger [dot] ac [dot] uk
-doi: 10.1101/2022.01.17.476665v1
-doi_link: https://www.biorxiv.org/content/10.1101/2022.01.17.476665v1
+doi: 10.1126/science.abo0510
+doi_link: https://www.science.org/doi/10.1126/science.abo0510
 lab: Teichmann Lab
 lab_website: http://www.teichlab.org/
 raw_data_link: 
