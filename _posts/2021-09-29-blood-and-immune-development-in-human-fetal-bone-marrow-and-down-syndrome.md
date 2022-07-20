@@ -1,6 +1,8 @@
 ---
 layout: post
 permalink: fetal-bone-marrow
+published: true
+listed: true
 title: "Blood and immune development in human fetal bone marrow and Down syndrome"
 date: 2021-09-29 00:00:00 +0000
 categories: 

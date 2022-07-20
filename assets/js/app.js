@@ -22,7 +22,7 @@
         return;
       }
       $('html, body').animate({
-        scrollTop: $(ev.target.dataset.scrollTo).offset().top - 100
+        scrollTop: $(ev.target.dataset.scrollTo).offset().top
       }, 1000)
     });
 

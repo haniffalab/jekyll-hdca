@@ -9,7 +9,7 @@ layout: default
     <h1 class="slide-in">HUMAN CELL ATLAS</h1>
     <h2 class="slide-in">DEVELOPMENTAL</h2>
     <div class="action-links slide-in">
-      <a href="#" data-scroll-to="#introduction" id="scroll-to-content" class="btn btn-light btn-pill align-self-center">View Collections</a>
+      <a href="#" data-scroll-to="#collections" id="scroll-to-content" class="btn btn-light btn-pill align-self-center">View Collections</a>
     </div>
   </div>
 </div>
@@ -18,19 +18,25 @@ layout: default
   <!-- Content -->
   <div class="content clearfix">
     <div id="introduction" class="container">
-      <div class="section-title col-lg-8 col-md-10 ml-auto mr-auto">
-        <p class="lead">A single cell atlas of the developing blood and immune system. Mauris interdum congue
-          urna ut tincidunt. Sed ac magna gravida, volutpat leo et, mattis dui. Fusce ultricies dolor et turpis
-          tristique, sed posuere leo ornare. Curabitur metus nibh, hendrerit non tristique sed</p>
+      <div class="section-title col-lg-8 col-md-10 ml-auto mr-auto text-justify">
+        <p class="lead">During development, controlled differentiation programmes give rise to a broad 
+          repertoire of cells with highly specialised functions and tissue locations. The Human Developmental 
+          Cell Atlas aims to generate a comprehensive profile of these cell types and states present 
+          during development. This detailed study of development will be critical for understanding congenital 
+          and childhood disorders, as well as ageing. Furthermore, since malignant cells exploit developmental 
+          programmes for their survival and growth, a deeper understanding of development will have impact in 
+          cancer research.</p>
       </div>
     </div>
     <!-- Collections -->
-    <div id="collections" class="container mb-5 pt-5">
-      <div class="section-title col-lg-8 col-md-10 ml-auto mr-auto">
-        <h3 class="mb-4">Collections</h3>
-        <p>Each collection displays a curated set of datasets associated with a publication. Data can be
+    <div id="collections" class="container pt-5 pb-5">
+      <div class="section-title col-lg-8 col-md-10 ml-auto mr-auto text-justify">
+        <h3 class="mb-4">Data Collections</h3>
+        <p>Collections display a curated set of datasets that contribute to a publication. Data can be
           visualised with interactive software, or downloaded for further interrogation.</p>
       </div>
+    </div>
+    <div id="collections" class="container-fluid pb-5">
       <div class="col-md-10 ml-auto mr-auto">
         <div class="table">
           <div class="row header">
@@ -47,7 +53,8 @@ layout: default
               Organism
             </div>
           </div>
-          {% for post in site.posts %}
+          {% assign posts = site.posts | where: "listed", true %}
+          {% for post in posts %}
           {% assign datasets_csv = post.permalink %}
           <div class="row">
             <div class="cell" data-title="Collection">
@@ -57,7 +64,8 @@ layout: default
               {% assign tissues = "" | split: ',' %}
               {% for dataset in site.data[datasets_csv] %}
                 {% assign list = dataset.tissue | split: "," %}
-                {% for tissue in list %}
+                {% for item in list %}
+                  {% assign tissue = item | strip %}
                   {% assign tissues = tissues | push: tissue %}
                 {% endfor %} 
               {% endfor %} 
@@ -84,9 +92,10 @@ layout: default
               {% assign organisms = "" | split: ',' %}
               {% for dataset in site.data[datasets_csv] %}
                 {% assign list = dataset.organism | split: "," %}
-                {% for organism in list %}
+                {% for item in list %}
+                  {% assign organism = item | strip %}
                   {% assign organisms = organisms | push: organism %}
-                {% endfor %}
+                {% endfor %} 
               {% endfor %} 
               {% assign all_organisms = organisms | compact | uniq | sort %}
               {% for organism in all_organisms %}
