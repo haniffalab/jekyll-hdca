@@ -3,7 +3,7 @@ layout: post
 permalink: yolk-sac
 published: true
 listed: false
-title: "Human yolk sac haematopoiesis and metabolic support during early development"
+title: "Multi-organ functions of yolk sac during human early development"
 date: 2022-03-03 00:00:00 +0000
 categories: 
 contact: Muzlifah Haniffa
@@ -16,4 +16,4 @@ raw_data_link:
 code_repository_link: https://github.com/haniffalab/FCA_yolkSac
 reproducibility_link: 
 ---
-Yolk sacs (YS) are highly-conserved extraembryonic structures. In phylogenetic terms, YS are first seen in vertebrates with yolk-rich eggs e.g. birds, reptiles and amphibians, where their role is to extract macronutrients from yolk to sustain the embryo. In many mammals, YS fuse with the chorion, forming an early placenta that facilitates nutrient transfer during organogenesis. In humans there is no yolk and no fusion with the chorion: the YS floats within the extraembryonic cavity tethered only to the embryo via the vitelline circulation. These differences have led to debate about whether the human YS is vestigial or whether it serves a specific function during embryonic development.
+The yolk sac (YS) represents an evolutionarily-conserved extraembryonic structure that ensures timely delivery of nutritional support and oxygen to the developing embryo. However, the YS remains ill-defined in humans. We therefore assemble a complete single cell 3D map of human YS from 3-8 post conception weeks by integrating multiomic protein and gene expression data. We reveal the YS as a site of primitive and definitive haematopoiesis including a YS-specific accelerated route to macrophage production, a source of nutritional/metabolic support and a regulator of oxygen-carrying capacity. We reconstruct the emergence of primitive haematopoietic stem and progenitor cells from YS hemogenic endothelium and their decline upon stromal support modulation as intraembryonic organs specialise to assume these functions. The YS therefore functions as ‘three organs in one’ revealing a multifaceted relay of vital organismal functions as pregnancy proceeds.
