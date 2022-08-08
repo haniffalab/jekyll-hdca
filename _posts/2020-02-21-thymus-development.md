@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: thymus
+permalink: thymus-development
 published: true
 listed: true
 title: "A cell atlas of human thymic development defines T cell repertoire formation"

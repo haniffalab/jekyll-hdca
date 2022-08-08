@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: adult-diseased-skin
+permalink: diseased-skin
 published: true
 listed: true
 title: "Developmental cell programs are co-opted in inflammatory skin disease"
