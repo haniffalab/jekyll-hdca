@@ -69,7 +69,7 @@ layout: default
                   {% assign tissues = tissues | push: tissue %}
                 {% endfor %} 
               {% endfor %} 
-              {% assign all_tissues = tissues | compact | downcase | uniq | sort | capitalize %}
+              {% assign all_tissues = tissues | compact | uniq | sort %}
               {% for tissue in all_tissues %}
                 {{ tissue }}<br />
               {% endfor %}  
