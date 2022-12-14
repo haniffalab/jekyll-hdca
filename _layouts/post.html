@@ -251,6 +251,11 @@ layout: default
                       class="fas fa-download"></i>&nbsp;&nbsp;.h5ad</a>
                   {% endif %}
                   {% if dataset.insight_link == nil and dataset.cellxgene_link == nil and dataset.h5ad_object_link ==
+                  nil and dataset.h5mu_object_link %}
+                  <a href="{{ dataset.h5mu_object_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i
+                      class="fas fa-download"></i>&nbsp;&nbsp;.h5mu</a>
+                  {% endif %}
+                  {% if dataset.insight_link == nil and dataset.cellxgene_link == nil and dataset.h5ad_object_link ==
                   nil and dataset.source_link %}
                   <a href="{{ dataset.source_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i
                       class="fas fa-download"></i>&nbsp;&nbsp;Source</a>
@@ -376,6 +381,16 @@ layout: default
                             be used to read from and write to the h5ad file format"></i></td>
                     <td>
                       <a href="{{ dataset.h5ad_object_link }}" class="btn btn-dark btn-squared btn-sm float-right"
+                        target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;Download</a>
+                    </td>
+                  </tr>
+                  {% endif %}
+                  {% if dataset.h5mu_object_link %}
+                  <tr>
+                    <td>H5MU file <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title=""
+                        data-original-title="MuData is a multimodal data object where individual modalities are represented with AnnData objects"></i></td>
+                    <td>
+                      <a href="{{ dataset.h5mu_object_link }}" class="btn btn-dark btn-squared btn-sm float-right"
                         target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;Download</a>
                     </td>
                   </tr>
