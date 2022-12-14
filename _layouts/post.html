@@ -138,6 +138,32 @@ layout: default
           </div>
         </div>
       </div>
+      {% elsif group.name == "Imaging" %}
+      <div class="container">
+        <div class="section-title col-lg-8 col-md-10 ml-auto mr-auto">
+          <h3 class="mb-4">Imaging data</h3>
+        </div>
+      </div>
+      <div class="col-md-10 ml-auto mr-auto ">
+        <div class="py-4">
+          <div class="row">
+            {% for dataset in group.items %}
+            <div class="col-md-12 col-lg-4 d-flex">
+              <div class="text-center card mb-4 flex-fill">
+                <img class="card-img-top img-thumbnail" src="{{ dataset.thumb }}" alt="{{ dataset.title }}">
+                <div class="card-body">
+                  <h4 class="card-title">{{ dataset.name }}</h4>
+                  <p class="card-text">{{ dataset.desc }}</p>
+                  <div>
+                    <a href="{{ dataset.image_viewer }}" target="_blank" class="btn btn-primary btn-pill">View</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
       {% elsif group.name == "Downloads" %}
       <div class="container">
         <div class="section-title col-lg-8 col-md-10 ml-auto mr-auto">
