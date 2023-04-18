@@ -41,6 +41,20 @@ layout: default
                   <dt class="col-sm-4">Lab</dt>
                   <dd class="col-sm-8"><a href="{{ page.lab_website }}">{{ page.lab }}</a></dd>
                   {% endif %}
+                  {% if page.graphical_abstract %}
+                  <dt class="col-sm-12">Graphical abstract</dt>
+                  <dd class="col-sm-12 d-flex justify-content-center">
+                    <div class="graphical-abstract">
+                      <a href="{{ page.graphical_abstract }}" target="_blank" rel="noopener noreferrer">
+                        {% if page.graphical_abstract_thumbnail %}
+                        <img class="mw-100 mh-100 p-3" src="{{ page.graphical_abstract_thumbnail }}" alt="{{ page.title }}">
+                        {% else %}
+                        <img class="mw-100 mh-100 p-3" src="{{ page.graphical_abstract }}" alt="{{ page.title }}">
+                        {% endif %}
+                      </a>
+                    </div>
+                  </dd>
+                  {% endif %}
                 </dl>
               </div>
               <div class="col-md-6">
@@ -104,6 +118,21 @@ layout: default
         </div>
       </div>
     </div>
+    {% if page.summary %}
+    <div id="summary" class="container-fluid text-justify mb-5">
+      {% assign summary_words = page.summary | number_of_words %}
+      {% if summary_words > 120 %}
+      <div class="col-md-10 mx-auto">
+        <p class="collapse mb-0" id="summaryCollapse" aria-expanded="false">{{ page.summary | newline_to_br }}</p>
+        <a role="button" class="collapsed" data-toggle="collapse" href="#summaryCollapse" aria-expanded="false" aria-controls="summaryCollapse"></a>
+      </div>
+      {% else %}
+      <div class="col-md-10 mx-auto">
+        <p class="mb-0">{{ page.summary | newline_to_br }}</p>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
     <div id="datasets" class="mb-5">
       {% assign items_grouped = site.data[dataset_csv] | group_by: 'category' %}
       {% for group in items_grouped %}

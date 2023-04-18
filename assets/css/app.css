@@ -682,6 +682,32 @@ dl {
   padding: 0.3rem;
 }
 
+#summary {
+  line-height: 1.5;
+}
+
+#summary #summaryCollapse.collapse:not(.show) {
+  display: block;
+  height: 9rem;
+  overflow: hidden;
+}
+
+#summary #summaryCollapse.collapsing {
+  height: 9rem;
+}
+
+#summary a.collapsed::after {
+  content: 'Read more';
+}
+
+#summary a:not(.collapsed)::after {
+  content: 'Show less';
+}
+
+
+.graphical-abstract {
+  max-height: 25em;
+}
 
 
 .video-link{
