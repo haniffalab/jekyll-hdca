@@ -267,6 +267,7 @@ layout: default
                   <a href="{{ dataset.webatlas_link }}" class="dataset-thumb-container" target="_blank">
                     <img src="{{ dataset.thumb | relative_url }}" class="dataset-thumb" alt="Preview" />
                   </a>
+                  {% endif %}
                   <div>
                     <a href="#DatasetModal{{ group.name | replace: ' ', '' }}{{ forloop.index }}" data-toggle="modal"
                       data-target="#DatasetModal{{ group.name | replace: ' ', '' }}{{ forloop.index }}">{{ dataset.name
@@ -307,7 +308,6 @@ layout: default
                       {% endif %}
                     </div>
                   </div>
-                  {% endif %}
                 </div>
               </div>
               <div class="cell nowrap" data-title="Tissue">
