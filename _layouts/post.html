@@ -47,7 +47,8 @@ layout: default
                     <div class="graphical-abstract">
                       <a href="{{ page.graphical_abstract }}" target="_blank" rel="noopener noreferrer">
                         {% if page.graphical_abstract_thumbnail %}
-                        <img class="mw-100 mh-100 p-3" src="{{ page.graphical_abstract_thumbnail }}" alt="{{ page.title }}">
+                        <img class="mw-100 mh-100 p-3" src="{{ page.graphical_abstract_thumbnail }}"
+                          alt="{{ page.title }}">
                         {% else %}
                         <img class="mw-100 mh-100 p-3" src="{{ page.graphical_abstract }}" alt="{{ page.title }}">
                         {% endif %}
@@ -124,7 +125,8 @@ layout: default
       {% if summary_words > 120 %}
       <div class="col-md-10 mx-auto">
         <p class="collapse mb-0" id="summaryCollapse" aria-expanded="false">{{ page.summary | newline_to_br }}</p>
-        <a role="button" class="collapsed" data-toggle="collapse" href="#summaryCollapse" aria-expanded="false" aria-controls="summaryCollapse"></a>
+        <a role="button" class="collapsed" data-toggle="collapse" href="#summaryCollapse" aria-expanded="false"
+          aria-controls="summaryCollapse"></a>
       </div>
       {% else %}
       <div class="col-md-10 mx-auto">
@@ -260,34 +262,51 @@ layout: default
             {% for dataset in group.items %}
             <div class="row">
               <div class="cell" data-title="Dataset">
-                <a href="#DatasetModal{{ group.name }}{{ forloop.index }}" data-toggle="modal"
-                  data-target="#DatasetModal{{ group.name }}{{ forloop.index }}">{{ dataset.name }}</a>
-                <div class="actions mt-2">
-                  <button type="button" class="btn btn-dark btn-squared btn-sm" data-toggle="modal"
-                    data-target="#DatasetModal{{ group.name }}{{ forloop.index }}">
-                    <i class="fas fa-bars"></i>
-                  </button>
-                  {% if dataset.insight_link %}
-                  <a href="{{ dataset.insight_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i
-                      class="fas fa-book-open"></i>&nbsp;&nbsp;Open</a>
-                  {% endif %}
-                  {% if dataset.cellxgene_link %}
-                  <a href="{{ dataset.cellxgene_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i
-                      class="fas fa-book-open"></i>&nbsp;&nbsp;cellxgene</a>
-                  {% endif %}
-                  {% if dataset.insight_link == nil and dataset.cellxgene_link == nil and dataset.h5ad_object_link %}
-                  <a href="{{ dataset.h5ad_object_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i
-                      class="fas fa-download"></i>&nbsp;&nbsp;.h5ad</a>
-                  {% endif %}
-                  {% if dataset.insight_link == nil and dataset.cellxgene_link == nil and dataset.h5ad_object_link ==
-                  nil and dataset.h5mu_object_link %}
-                  <a href="{{ dataset.h5mu_object_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i
-                      class="fas fa-download"></i>&nbsp;&nbsp;.h5mu</a>
-                  {% endif %}
-                  {% if dataset.insight_link == nil and dataset.cellxgene_link == nil and dataset.h5ad_object_link ==
-                  nil and dataset.source_link %}
-                  <a href="{{ dataset.source_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i
-                      class="fas fa-download"></i>&nbsp;&nbsp;Source</a>
+                <div class="d-flex flex-xl-row flex-column">
+                  {% if dataset.thumb %}
+                  <a href="{{ dataset.webatlas_link }}" class="dataset-thumb-container" target="_blank">
+                    <img src="{{ dataset.thumb | relative_url }}" class="dataset-thumb" alt="Preview" />
+                  </a>
+                  <div>
+                    <a href="#DatasetModal{{ group.name | replace: ' ', '' }}{{ forloop.index }}" data-toggle="modal"
+                      data-target="#DatasetModal{{ group.name | replace: ' ', '' }}{{ forloop.index }}">{{ dataset.name
+                      }}</a>
+                    <div class="actions mt-2">
+                      <button type="button" class="btn btn-dark btn-squared btn-sm" data-toggle="modal"
+                        data-target="#DatasetModal{{ group.name | replace: ' ', '' }}{{ forloop.index }}">
+                        <i class="fas fa-bars"></i>
+                      </button>
+                      {% if dataset.webatlas_link %}
+                      <a href="{{ dataset.webatlas_link }}" class="btn btn-dark btn-squared btn-sm"
+                        target="_blank">WebAtlas</a>
+                      {% endif %}
+                      {% if dataset.insight_link %}
+                      <a href="{{ dataset.insight_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i
+                          class="fas fa-book-open"></i>&nbsp;&nbsp;Open</a>
+                      {% endif %}
+                      {% if dataset.cellxgene_link %}
+                      <a href="{{ dataset.cellxgene_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i
+                          class="fas fa-book-open"></i>&nbsp;&nbsp;cellxgene</a>
+                      {% endif %}
+                      {% if dataset.insight_link == nil and dataset.cellxgene_link == nil and dataset.h5ad_object_link
+                      %}
+                      <a href="{{ dataset.h5ad_object_link }}" class="btn btn-dark btn-squared btn-sm"
+                        target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;.h5ad</a>
+                      {% endif %}
+                      {% if dataset.insight_link == nil and dataset.cellxgene_link == nil and dataset.h5ad_object_link
+                      ==
+                      nil and dataset.h5mu_object_link %}
+                      <a href="{{ dataset.h5mu_object_link }}" class="btn btn-dark btn-squared btn-sm"
+                        target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;.h5mu</a>
+                      {% endif %}
+                      {% if dataset.insight_link == nil and dataset.cellxgene_link == nil and dataset.h5ad_object_link
+                      ==
+                      nil and dataset.source_link %}
+                      <a href="{{ dataset.source_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i
+                          class="fas fa-download"></i>&nbsp;&nbsp;Source</a>
+                      {% endif %}
+                    </div>
+                  </div>
                   {% endif %}
                 </div>
               </div>
@@ -329,8 +348,9 @@ layout: default
       </div>
       <!-- Dataset modal content -->
       {% for dataset in group.items %}
-      <div class="modal fade" id="DatasetModal{{group.name}}{{ forloop.index }}" tabindex="-1" role="dialog"
-        aria-labelledby="DatasetModal{{group.name}}{{ forloop.index }}Title" aria-hidden="true">
+      <div class="modal fade" id="DatasetModal{{ group.name | replace: ' ', '' }}{{ forloop.index }}" tabindex="-1"
+        role="dialog" aria-labelledby="DatasetModal{{ group.name | replace: ' ', '' }}{{ forloop.index }}Title"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -373,15 +393,23 @@ layout: default
                 </dd>
               </dl>
               {% if dataset.insight_link or
+              dataset.webatlas_link or
               dataset.cellxgene_link or
               dataset.vitescce_link %}
               <h5 class="text-muted mb-4">Apps for data exploration</h5>
               <dl class="row">
                 {% if dataset.insight_link %}
-                <dt class="col-sm-4">Adifa</dt>
+                <dt class="col-sm-4">Open</dt>
                 <dd class="col-sm-8">
                   <a href="{{ dataset.insight_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i
-                      class="fas fa-book-open"></i>&nbsp;&nbsp;Adifa</a>
+                      class="fas fa-book-open"></i>&nbsp;&nbsp;Insight</a>
+                </dd>
+                {% endif %}
+                {% if dataset.webatlas_link %}
+                <dt class="col-sm-4">WebAtlas</dt>
+                <dd class="col-sm-8">
+                  <a href="{{ dataset.webatlas_link }}" class="btn btn-dark btn-squared btn-sm" target="_blank"><i
+                      class="fas fa-book-open"></i>&nbsp;&nbsp;WebAtlas</a>
                 </dd>
                 {% endif %}
                 {% if dataset.cellxgene_link %}
@@ -417,7 +445,8 @@ layout: default
                   {% if dataset.h5mu_object_link %}
                   <tr>
                     <td>H5MU file <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title=""
-                        data-original-title="MuData is a multimodal data object where individual modalities are represented with AnnData objects"></i></td>
+                        data-original-title="MuData is a multimodal data object where individual modalities are represented with AnnData objects"></i>
+                    </td>
                     <td>
                       <a href="{{ dataset.h5mu_object_link }}" class="btn btn-dark btn-squared btn-sm float-right"
                         target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;Download</a>
