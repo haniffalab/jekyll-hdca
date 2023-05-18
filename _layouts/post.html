@@ -464,6 +464,17 @@ layout: default
                     </td>
                   </tr>
                   {% endif %}
+                  {% if dataset.totalvi_model_link %}
+                  <tr>
+                    <td>totalVI model <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title=""
+                        data-original-title="totalvi (total variational inference) is a package for probabilistic modeling and analysis
+                            of single-cell omics data"></i></td>
+                    <td>
+                      <a href="{{ dataset.totalvi_model_link }}" class="btn btn-dark btn-squared btn-sm float-right"
+                        target="_blank"><i class="fas fa-download"></i>&nbsp;&nbsp;Download</a>
+                    </td>
+                  </tr>
+                  {% endif %}
                   {% if dataset.celltypist_model_link %}
                   <tr>
                     <td>Celltypist model <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top"
