@@ -21,17 +21,21 @@ layout: default
         page.zenodo_link %}
         <p class="text-left">
           {% if page.code_repository_link %}
-          <a href="https://github.com/haniffalab/webatlas-pipeline/" rel="nofollow">
-            <img src="https://img.shields.io/badge/Github-34495e.svg?logo=github&logoColor=white" alt="docs" /></a>
+          <a href="{{ page.code_repository_link }}" rel="nofollow">
+            <img src="https://img.shields.io/badge/Github-34495e.svg?logo=github&logoColor=white" alt="github" /></a>
           {% endif %}
           {% if page.documentation_link %}
-          <a href="https://haniffalab.github.io/webatlas-pipeline" rel="nofollow">
+          <a href="{{ page.documentation_link }}" rel="nofollow">
             <img src="https://img.shields.io/badge/Documentation-34495e.svg?logo=readthedocs&logoColor=white"
               alt="docs" /></a>
           {% endif %}
+          {% if page.biorxiv_link %}
+          <a href="https://doi.org/10.1101/{{ page.biorxiv_link }}" rel="nofollow">
+            <img src="https://img.shields.io/badge/Preprint-bioRxiv-bd2736" alt="biorxiv" /></a>
+          {% endif %}
           {% if page.zenodo_link %}
-          <a href="https://doi.org/10.5281/zenodo.7405818" rel="nofollow">
-            <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7405818.svg" alt="docs" /></a>
+          <a href="https://doi.org/10.5281/zenodo.{{ page.zenodo_link }}" rel="nofollow">
+            <img src="https://img.shields.io/badge/Software-Zenodo-blue" alt="zenodo" /></a>
           {% endif %}
         </p>
         {% endif %}
