@@ -64,6 +64,10 @@ layout: default
                   <dt class="col-sm-4">Lab</dt>
                   <dd class="col-sm-8"><a href="{{ page.lab_website }}">{{ page.lab }}</a></dd>
                   {% endif %}
+                  {% if page.dataset %}
+                  <dt class="col-sm-4">Dataset</dt>
+                  <dd class="col-sm-8">{{ page.dataset }}</a></dd>
+                  {% endif %}
                   {% if page.graphical_abstract %}
                   <dt class="col-sm-12">Graphical abstract</dt>
                   <dd class="col-sm-12 d-flex justify-content-center">
