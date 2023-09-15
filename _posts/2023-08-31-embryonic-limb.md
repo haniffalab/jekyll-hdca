@@ -7,7 +7,7 @@ title: "A human embryonic limb cell atlas resolved in space and time"
 date: 2023-08-31 00:00:00 +0000
 categories: 
 contact: Peng He
-contact_email: ph12 [at] sanger [dot] ac [dot] uk
+contact_email: brianpenghe@gmail.com
 doi: 
 doi_link: 
 lab: Teichmann Lab
@@ -16,8 +16,8 @@ raw_data_link:
 code_repository_link: https://github.com/Teichlab/limbcellatlas/
 reproducibility_link:
 ---
-Human limbs emerge during the fourth post-conception week as mesenchymal buds which develop into fully-formed limbs over the subsequent months1.
-Limb development is orchestrated by numerous temporally and spatially restricted gene expression programmes, making congenital alterations in phenotype common2.
+Human limbs emerge during the fourth post-conception week as mesenchymal buds which develop into fully-formed limbs over the subsequent months.
+Limb development is orchestrated by numerous temporally and spatially restricted gene expression programmes, making congenital alterations in phenotype common.
 Decades of work with model organisms has defined the fundamental mechanisms underlying vertebrate limb development,
 but an in-depth characterisation of this process in humans has yet to be performed.
 Here, we detail human embryonic limb development across space and time using single-cell and spatial transcriptomics.
