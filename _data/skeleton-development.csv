@@ -15,5 +15,5 @@ Calvaria,10x Genomics Cytassist Visium of the human developing coronal suture an
 6.7 Upper Limb,Human Upper limb at 6.7 pcw,ISS,,Upper limb,ISS,None,Homo sapiens,,,,,,,,,,,,,,,,
 7.3 Shoulder,Human shoulder at 7.3 pcw,ISS,,Shoulder,ISS,None,Homo sapiens,,,,,,,,,,,,,,,,
 7.3 Knee,Human knee at 7.3 pcw,ISS,,Knee,ISS,None,Homo sapiens,,,,,,,,,,,,,,,,
-ATAC,normalized h5ad,Downloads,,,,,,,,,,,,,,,,,,,,,
-multiomic,raw,Downloads,,,11x multiome,None,Homo sapiens,,,,,,,,,,,,,,,,
+ATAC,normalized h5ad,Downloads,,,10x multiome,None,Homo sapiens,,,,,,,,,,,,,,,,
+multiomic,raw,Downloads,,,10x multiome,None,Homo sapiens,,,,,,,,,,,,,,,,
