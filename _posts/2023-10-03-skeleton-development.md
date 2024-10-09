@@ -2,7 +2,7 @@
 layout: post
 permalink: skeleton-development
 published: true
-listed: false
+listed: true
 title: "A multiomic atlas of human early skeletal development"
 date: 2023-08-31 00:00:00 +0000
 categories:
@@ -13,7 +13,7 @@ doi_link:
 lab: Teichmann Lab
 lab_website: http://www.teichlab.org/
 raw_data_link:
-code_repository_link: https://github.com/Teichlab/limbcellatlas/
+code_repository_link: https://github.com/Teichlab/skeletal_dev_atlas/
 reproducibility_link:
 ---
 
