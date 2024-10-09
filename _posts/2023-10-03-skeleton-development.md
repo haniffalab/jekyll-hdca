@@ -4,7 +4,7 @@ permalink: skeleton-development
 published: true
 listed: true
 title: "A multiomic atlas of human early skeletal development"
-date: 2023-08-31 00:00:00 +0000
+date: 2024-10-09 00:00:00 +0000
 categories:
 contact: Ken To, Lijiang Fei, Jan Patrick Pett
 contact_email: kt21@sanger.ac.uk
