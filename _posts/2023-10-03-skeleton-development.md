@@ -3,7 +3,7 @@ layout: post
 permalink: skeleton-development
 published: true
 listed: true
-title: "A multiomic atlas of human early skeletal development"
+title: "A Multi-omic Atlas of Human Embryonic Skeletal Development"
 date: 2024-10-09 00:00:00 +0000
 categories:
 contact: Ken To, Lijiang Fei, Jan Patrick Pett
