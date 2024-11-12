@@ -4,7 +4,7 @@ permalink: fetal-skin
 published: true
 listed: true
 title: "A prenatal skin atlas reveals immune regulation of human skin morphogenesis"
-date: 2022-08-08 00:00:00 +0000
+date: 2024-10-16 00:00:00 +0000
 categories:
 contact: Muzlifah Haniffa
 contact_email: mh32@sanger.ac.uk
